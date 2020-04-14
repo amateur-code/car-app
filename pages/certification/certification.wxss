@@ -1,0 +1,63 @@
+page{
+  width: 100%;
+  height: 100%;
+  background: #fcfdff;
+}
+.certification_container{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 35rpx;
+}
+.certification_container .formBox{
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  box-shadow:0 0 10px rgba(0, 0, 0, 0.1);
+}
+.certification_container .formBox .item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.certification_container .formBox .item.userName image{
+  width: 25rpx;
+  height: 22rpx;
+}
+.certification_container .formBox .item.idCard image{
+  width: 24rpx;
+  height: 21rpx;
+}
+.certification_container .formBox .item.userName input{
+  border-bottom: 1px solid #e8e9eb;
+  
+}
+.certification_container .formBox .item input{
+  margin-left: 20rpx;
+  height: 90rpx;
+  font-size: 28rpx;
+  flex: 1;
+}
+.placeholderClass{
+  font-size: 28rpx;
+  color: #c8c9cc;
+}
+.certification_container .flow{
+  width: 100%;
+  display: flex;
+  padding-top: 170rpx;
+  justify-content: center;
+}
+.certification_container .flow image{
+  width: 480rpx;
+  height: 504rpx;
+}
+.submitBtn{
+  width: 680rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 34rpx; 
+  border-radius: 5rpx;
+  position: absolute;
+  bottom: 35rpx;
+  left: 35rpx;
+}

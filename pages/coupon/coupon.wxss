@@ -1,0 +1,113 @@
+page{
+  background: #fcfdff;
+  padding-top: 40rpx;
+}
+.header {
+  font-size: 24rpx;
+  width: 100%;
+  text-align: center;
+  color: #19191a;
+  margin-bottom: 28rpx;
+}
+.coupon_item{
+  margin-top: 20rpx;
+}
+.radio {
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  position: relative;
+}
+
+.coupon-msg {
+  width: 622rpx;
+  height: 210rpx;
+  border-radius: 5rpx;
+  /* margin-left: 35rpx; */
+  position: relative;
+  box-shadow: 0 3rpx 5rpx #eee;
+}
+.coupon_bg{
+  width: 622rpx;
+  height: 210rpx;
+}
+.coupon-msg .coupon_right{
+  width: 622rpx;
+  height: 210rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+.title {
+  font-size: 28rpx;
+  color: #19191a;
+}
+
+.listNull {
+font-size:30rpx;
+text-align:center;
+margin-top:100rpx;
+color:#999999;
+
+}
+
+.over-time {
+  font-size: 20rpx;
+  color: #19191a;
+  margin-bottom: 25rpx;
+}
+
+.tip {
+  font-size: 20rpx;
+  color: #9a9a9a;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:3;
+}
+
+.fee {
+  font-size: 24rpx;
+  color: #19191a;
+  width: 200rpx;
+  text-align: center;
+}
+.fee .num{
+  font-size: 42rpx;
+  color: #ff4b14;
+}
+.fee .num.otherNum{
+  font-size: 60rpx;
+}
+.fee .num .rmbUnit{
+  font-size: 30rpx;
+}
+.fee .unit{
+  font-size: 22rpx;
+  color: #ff4b14;
+}
+.coupon_txt{
+  flex: 1;
+  padding-left: 50rpx;
+}
+.coupon-list{
+  display: flex;
+  justify-content: flex-start;
+  position: relative
+}
+.icon-r{
+  width:26rpx;
+height:26rpx;
+border:2rpx solid #C8C9CC;
+display:inline-block;
+border-radius:50%;
+}
+.icon{
+  height: 210rpx;
+  width:80rpx;
+  text-align:center;
+  line-height: 210rpx;
+  align-items: center;
+}

@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/authorizeLogin/authorizeLogin",
+    "pages/login/login",
+    "pages/commitConfirm/commitConfirm",
+    "pages/certification/certification",
+    "pages/polling/polling",
+    "pages/order/order",
+    "pages/address/address",
+    "pages/costDetails/costDetails",
+    "pages/costEstimate/costEstimate",
+    "pages/price/price",
+    "pages/pay/pay",
+    "pages/orderTrace/orderTrace",
+    "pages/orderDetail/orderDetail",
+    "pages/personalCenter/personalCenter",
+    "pages/historyDetail/historyDetail",
+    "pages/active/active",
+    "pages/coupon/coupon",
+    "pages/cancelFee/cancelFee",
+    "pages/webview/webview",
+    "pages/cancelReason/cancelReason",
+    "pages/orderHistory/orderHistory",
+    "pages/couponList/couponList",
+    "pages/homeAd/homeAd",
+    "pages/dynamicJudge/dynamicJudge",
+    "pages/protocol/protocol",
+    "pages/cashier/cashier",
+    "pages/logs/logs",
+    "pages/selectDriver/selectDriver"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "e代驾",
+    "backgroundColor": "#eee"
+  },
+  "debug": false,
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,3 @@
+  <map id="map" style="width:100%;height:{{map.mapHeight}}px" scale="{{map.scale}}" longitude="{{map.longitude ? map.longitude : 116.1544990540}}" latitude="{{map.latitude ? map.latitude : 39.8468989874}}" controls="{{controls}}" circles="{{circles}}" markers="{{markers}}">
+  <cover-view class="cancel" style="top:{{map.btnHeight}}px" bindtap="confirmCancel" wx:if="{{showCancelBtn}}">取消订单</cover-view>
+</map> 

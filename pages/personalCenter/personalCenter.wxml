@@ -1,0 +1,32 @@
+<view class="wechat_info" wx:if="{{user}}">
+  <button class="getUser" style="border-color: #ff0000;" open-type="getUserInfo"  bindgetuserinfo="bindGetUserInfo">
+    <image class="avatarUrl" src="{{user.avatarUrl}}"></image>
+  </button>
+  <view class="phone">{{user.phone}}</view>
+</view>
+<view class="person_list">
+<navigator class="item" url='../orderHistory/orderHistory'>
+    <text class="txt">订单</text>
+    <image class="arrow_icon" src="../../res/arrow_right.png"></image>
+</navigator>
+
+<navigator class="item" url='../couponList/couponList?bType=all'>
+    <text class="txt">代驾券</text>
+    <image class="arrow_icon" src="../../res/arrow_right.png"></image>
+</navigator>
+
+  <navigator class="item" url='../price/price?city={{city}}'>
+    <text class="txt">计费规则</text>
+    <image class="arrow_icon" src="../../res/arrow_right.png"></image>
+  </navigator>
+  <navigator class="item" url='../webview/webview?path=driverbook/protocol.html'>
+    <text class="txt">法律条款</text>
+    <image class="arrow_icon" src="../../res/arrow_right.png"></image>
+  </navigator>
+  <view class="item" bindtap="makeACall">
+    <text class="txt">客服热线</text>
+    <text class="service_phone">{{servicePhone}}</text>
+    <image class="arrow_icon" src="../../res/arrow_right.png"></image>
+  </view>
+</view>
+<navigator class="exit_btn" url="../authorizeLogin/authorizeLogin?exitAccount=switch">切换账号</navigator>

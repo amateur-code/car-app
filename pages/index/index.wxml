@@ -1,0 +1,87 @@
+<!-- index.wxml -->
+<map wx:if="{{showMap}}" id="map" style="width:100%;height:{{map.height}}px" scale="{{map.scale}}" show-location="{{true}}" latitude="{{map.latitude}}" longitude="{{map.longitude}}" markers="{{map.markers}}" controls="{{map.controls}}" bindcontroltap="controltap" include-points="{{map.includePoints}}" bindregionchange="regionchange" circles="{{map.circles}}">
+  <cover-view class="tip" bindtap="tapWelcome" wx:if="{{showWelcome}}">
+    <cover-image src="../../res/tip_icon.png"></cover-image>
+    <cover-view class="content">{{homeAd.content}}</cover-view>
+  </cover-view>
+</map>
+<cover-view wx:if="{{!showMap}}" class="holder"></cover-view>
+<cover-view class="callout2" wx:if="{{showCallout}}" style="top: {{calloutTop}}px;color:#44A7EF;">
+  <cover-image class="callout2-image" src="../../res/map_pop.png"></cover-image>
+  <cover-view class="callout2-item-container" scroll-top="0">
+    <cover-view class="callout-item1" wx:if="{{calloutTxt}}">{{calloutTxt}} </cover-view>
+    <cover-view class="callout-item2" style="">{{calloutTxt2}}</cover-view>
+  </cover-view>
+</cover-view>
+<cover-view class="tickert-bg" wx:if="{{isNew}}">
+  <cover-view class="ticketBox">
+    <cover-image class="bgImage" src='../../res/ticket-bg.png'></cover-image>
+    <cover-view class="ticket-list">
+      <cover-view class="item" wx:for="{{ticketList}}" wx:key="item">
+        <cover-image class="itemImg" src='../../res/ticket.png'></cover-image>
+        <cover-view class="info">
+          <cover-view class="symbol">￥</cover-view>
+          <cover-view class='number'>{{item.money}}</cover-view>
+          <cover-view class="infoRight">
+            <cover-view class="title">代驾券</cover-view>
+            <cover-view class="line"></cover-view>
+            <cover-view class="time">有效期至{{item.endDate}}</cover-view>
+          </cover-view>
+        </cover-view>
+      </cover-view>
+    </cover-view>
+  </cover-view>
+  <cover-image bindtap='closeAC' class="close-btn" src='../../res/close-icon.png'></cover-image>
+</cover-view>
+<view class='tabList'>
+  <text class='general {{!isClickFemale ? "active" : ""}}' bindtap='handlerGeneral'>日常</text>
+  <text class='female {{isClickFemale ? "active" : ""}}' bindtap='handlerFemale'>女司机</text>
+</view>
+<view class="address-wrapper" wx:if='{{!showFemale}}'>
+  <view class="address-msg">
+    <view class="address-wrapper-left">
+      <image class="" src="../../res/icon_start.png"></image>
+      <view class="address-wrapper-left-line">
+        <image src="/res/to.png"></image>
+      </view>
+      <image class="" src="../../res/icon_terminus.png"></image>
+    </view>
+    <view class="address-input-container">
+      <view class="location-wrap start-location" bindtap="skipAddressList" data-location="start">
+        <text class='borderNone'>{{loc.name}}</text>
+      </view>
+      <view class="location-wrap end-location" data-location="end" bindtap="skipAddressList">
+        <view class="fee-line"></view>
+        <view class="end-location-container {{(showDynamic && showMainBtn && !isClickFemale) ? 'border-bottom' : ''}}">
+          <text>请输入目的地</text>
+          <view style="" wx:if="{{showAddressRecommend && !isClickFemale}}" class="end-recommend">
+            <view class="end-arrow"></view>
+            <!-- <image class="background-image-dark" src="../../res/address_pop.png"></image> -->
+            <view catchtap="goRecommendAddress" class="recommend-text">去：{{recommendAddress.name}}</view>
+            <view catchtap="closeAddressRecommend" class="background-image-close-container">
+              <image class="background-image-close" src="../../res/popup_icon_close_white.png"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="dynamic dynamic2" wx:if="{{showDynamic && showMainBtn && !isClickFemale}}">
+      {{dynamicInfo.dynamicRate ? '需求过旺临时调价' : '需求过旺每单加价'}}
+      <text style="color:#ff6600;">{{dynamicInfo.dynamicRate?dynamicInfo.dynamicRate:dynamicInfo.dynamicFee}}</text>
+      {{dynamicInfo.dynamicRate?'倍':'元'}}
+    </view>
+  </view>
+  <form bindsubmit="commitOrder" report-submit="true"  wx:if="{{showMainBtn && !isClickFemale}}">
+    <button class="commitBtn" type="commitStyle2" formType="submit">
+      呼叫司机
+    </button>
+  </form>
+  <!-- <button class="commitBtn" wx:if="{{showMainBtn && !isClickFemale}}" type="commitStyle2" bindtap="commitOrder">
+    呼叫司机
+  </button> -->
+</view>
+<view class='verifyBox' wx:if='{{showFemale && isClickFemale}}'>
+  <image class='verify_banner' src='../../res/female-active.png'></image>
+  <button class="authBtn" type='commitStyle2' bindtap='verifyFemale'>实名认证</button>
+</view>
+<red-packet acceptData= "{{redPacketData}}" showMapView= "{{true}}" bindcloseEvent="onCloseRedPacket" wx:if="{{showRedPacket}}"></red-packet>

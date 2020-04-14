@@ -1,0 +1,37 @@
+<view class="pay-container" wx:if="{{order.show}}">
+  <view class="title">
+    <text>请确认费用明细并支付</text>
+  </view>
+  <view class="content" wx:if="{{!detailToIndex}}">
+    <image class="pay-line" src="../../res/pay_line.png"></image>
+    <view class="info">
+      <view class="layout">
+        <view class="header flex-between">
+          <view class="order-time">{{order.order_time}}</view>
+          <view class="order-name">
+            <text>{{order.order_info.driver_name}}</text>
+          </view>
+        </view>
+        <view class="address flex-between" bindtap="lookTrace">
+          <view>
+            <view class="ad start-ad">从 <text>{{order.order_info.start}}</text></view>
+            <view class="ad end-ad">到 <text>{{order.order_info.destination}}</text></view>
+          </view>
+          <image class="right-icon" src="../../res/arrow_right.png"></image>
+        </view>
+        <view class="fee-list">
+          <!-- <view class="fee-detail flex-between" wx:for="{{order.fee_detail}}" wx:key="collectionFee" wx:for-item="fee">
+            <text class="fee-key">{{fee.key}}</text>
+            <text class="fee-value">{{fee.value}}</text>
+          </view> -->
+          <view class="fee-detail flex-between" wx:for="{{order.fee_detail}}" wx:key="settleFee" wx:for-item="fee">
+            <text class="fee-key">{{fee.title}}</text>
+            <text class="fee-value">{{fee.money}}元</text>
+          </view>
+        </view>
+      </view>
+      <image class="sawtooth" src='../../res/sawtooth.png'></image>
+    </view>
+    <button class="payCommit"  type="commitStyle2" bindtap="commitOrder">在线支付 {{order.need_pay.money}}元</button>
+  </view>
+</view>

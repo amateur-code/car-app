@@ -1,0 +1,12 @@
+.cancel{
+  position: relative;
+  left: 5%; 
+  width: 90%;
+  height: 90rpx; 
+  line-height: 90rpx;
+  background-color: #ffffff;
+  font-size: 34rpx;
+  border-radius: 4px;
+	border: solid 1px #dddddd;
+  text-align: center
+}

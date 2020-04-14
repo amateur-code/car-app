@@ -1,0 +1,42 @@
+<view>
+		<view class="main-container">
+				<view class="title_container">
+						<view class="title">登录</view>
+						<view class="title_tip">为您提供专业、安全、快捷的代驾服务</view>
+				</view>
+				<view class="form-container">
+						<form>
+								<view class="form_row">
+										<input value="" maxlength="11" type="number" placeholder="请输入手机号" bindinput="bindPhoneInput" placeholder-class="inputdefault" />
+								</view>
+								<view class="form_row">
+										<input type="number" maxlength="11" class="" placeholder="请输入验证码" bindinput="bindCaptchaInput" placeholder-class="inputdefault" />
+										<button type="default" class="button-right" bindtap="getCaptcha" disabled="{{captchaDisabled}}">
+												{{ captchaValue }}
+										</button>
+								</view>
+								<view class="form_row">
+										<button class="btn-submit" type="default" disabled="{{ submitDisabled }}" bindtap="doLogin">
+												登录
+										</button>
+								</view>
+						</form>
+				</view>
+		</view>
+</view>
+<!-- <view class="page-container" wx:if="{{hasPhone}}">
+    <view class="row-container">
+        <text class="phone-msg">请输入手机{{phone}}收到的短信验证码</text>
+    </view>
+    <view class="form-container">
+        <form>
+            <view class="row-container">
+                <input type="number" bindinput="bindCaptchaInput" placeholder="请输入验证码" />
+                <button type="default" class="button-right"  bindtap="getCaptcha" disabled="{{captchaDisabled}}">{{captchaValue}}</button>
+            </view>
+            <view class="row-container">
+                <button class="btn-submit" type="primary" disabled="{{submitDisabled}}" bindtap="doLogin">确认下单</button>
+            </view>
+        </form>
+    </view>
+</view> -->

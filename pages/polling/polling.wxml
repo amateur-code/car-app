@@ -1,0 +1,50 @@
+<map id="map" style="width:100%;height:{{map.mapHeight}}px" scale="{{map.scale}}" longitude="{{map.longitude}}" latitude="{{map.latitude}}" controls="{{controls}}" circles="{{circles}}" markers="{{markers}}">
+</map>
+  <cover-view class="map-holder" style="height:{{map.mapHeight}}px;"></cover-view>
+<cover-view class="callout2" wx:if="{{showCancel}}" style="top: {{calloutTop}}px;color:#44A7EF;">
+  <cover-image class="callout2-image" src="../../res/location_bubble_bg.png"></cover-image>
+  <cover-view class="callout2-item-container" scroll-top="0">
+    <cover-view class="callout-item1" wx:if="{{calloutTxt }}">{{calloutTxt}} </cover-view>
+    <cover-view class="callout-item2" style=""> {{ calloutTxt2 }}</cover-view>
+  </cover-view>
+</cover-view>
+<view wx:if="{{ (showPollingConfigTip || showPollingConfigTitle) && showCancel }}">
+  <view class="info_container">
+    <view class="info1" wx:if="{{showPollingConfigTitle}}">
+      <image class="info1_icon" src="../../res/icon_tip.png"></image>
+      <text>{{ titleItem }}</text>
+    </view>
+    <view class="info2" wx:if="{{showPollingConfigTip}}">
+      <view class="info2_title">
+        {{ tip.title }}
+      </view>
+      <view class="info2_content">
+        {{ tipItem }}
+      </view>
+    </view>
+    <view class="btn_container">
+      <view bindtap="confirmCancel" class="cancel">取消订单</view>
+    </view>
+  </view>
+</view>
+<cover-view wx:if="{{!showPollingConfigTip && !showPollingConfigTitle && showCancel}}" class="cancel2" style="top:{{map.btnHeight}}px" bindtap="confirmCancel">取消订单</cover-view>
+<cover-view class="tickert-bg" wx:if="{{isNew}}">
+  <cover-view class="ticketBox">
+    <cover-image class="bgImage" src='../../res/ticket-bg.png'></cover-image>
+    <cover-view class="ticket-list">
+      <cover-view class="item" wx:for="{{ticketList}}" wx:key="item">
+        <cover-image class="itemImg" src='../../res/ticket.png'></cover-image>
+        <cover-view class="info">
+          <cover-view class="symbol">￥</cover-view>
+          <cover-view class='number'>{{item.money}}</cover-view>
+          <cover-view class="infoRight">
+            <cover-view class="title">代驾券</cover-view>
+            <cover-view class="line"></cover-view>
+            <cover-view class="time">有效期至{{item.endDate}}</cover-view>
+          </cover-view>
+        </cover-view>
+      </cover-view>
+    </cover-view>
+  </cover-view>
+  <cover-image bindtap='closeAC' class="close-btn" src='../../res/close-icon.png'></cover-image>
+</cover-view>

@@ -1,0 +1,18 @@
+<view class='certification_container'>
+  <form bindsubmit='handlerSubmit'>
+    <view class='formBox'>
+      <view class='item userName'>
+        <image src='../../res/female-user.png'></image>
+        <input placeholder='请输入您的姓名' placeholder-class='placeholderClass' name="userName"></input>
+      </view>
+      <view class='item idCard'>
+        <image src='../../res/female-idcard.png'></image>
+        <input placeholder='请输入您的身份证号' placeholder-class='placeholderClass' name='idcard'></input>
+      </view>
+    </view>
+    <view class='flow'>
+      <image src='../../res/female-flow.png'></image>
+    </view>
+    <button class='submitBtn' type='commitStyle2' formType="submit">下一步</button>
+  </form>
+</view>

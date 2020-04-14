@@ -1,0 +1,2 @@
+<map markers="{{markers}}" style="width:100%;height:{{height}}px" polyline="{{polyline}}" include-points="{{includePoints}}" latitude="39.90886" longitude="116.39739"></map>
+<cover-view wx:if="{{!showMap}}" class="map-holder"></cover-view>

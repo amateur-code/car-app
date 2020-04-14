@@ -1,0 +1,120 @@
+.driver-info {
+  overflow: hidden;
+  position: relative;
+  height: 180rpx;
+  background-color: #f5f5f5;
+  font-size: 28rpx;
+}
+
+.driver-head {
+  width: 68rpx;
+  height: 68rpx;
+  float: left;
+  margin-right: 20rpx;
+  border: solid 1px #ddd;
+  border-radius: 50rpx;
+  line-height: 105rpx;
+  margin-top: 20rpx;
+}
+
+.driver-title {
+  width: 90%;
+  margin-left: 5%;
+  height: 110rpx;
+}
+
+.content {
+  float: left;
+}
+
+.content view {
+  margin-top: 10rpx;
+}
+
+.call-link {
+  box-sizing: border-box;
+  width: 98rpx;
+  height: 98rpx;
+  padding: 20rpx;
+  position: absolute;
+  right: 20rpx;
+}
+
+.call-link-img {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.clear {
+  clear: both;
+}
+
+.notice {
+  width: 100%;
+  padding-left: 5%;
+  border-top: 1rpx solid #ddd;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: left;
+}
+
+.cancel {
+  position: absolute;
+  left: 5%;
+  bottom: 70rpx;
+  width: 90%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #ffffff;
+  border: 1px solid #3B414D;
+  font-size: 34rpx;
+  border-radius: 4rpx;
+  text-align: center;
+  color: #3B414D;
+}
+.order::before{
+  border: none;
+}
+
+.driver-name {
+  font-size: 28rpx;
+}
+
+.content view {
+  font-size: 24rpx;
+}
+
+.content view text {
+  display: inline-block;
+  min-width: 60rpx;
+  text-align: center;
+}
+
+.face {
+  color: #999;
+  position: relative;
+  left: -50rpx;
+}
+
+.xing {
+  display: inline-block;
+  margin-left: 10rpx;
+}
+
+.xing text {
+  color: #fff;
+  position: relative;
+  top: -3rpx;
+  left: -55rpx;
+  font-size: 18rpx;
+}
+
+.xing image {
+  width: 56rpx;
+  height: 22rpx;
+  margin: 0 10rpx;
+}
+
+.sec-line text {
+  margin-right: 15rpx;
+}

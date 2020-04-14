@@ -1,0 +1,62 @@
+<view id="page_wrap" class="{{showRedPacket?'prevent-default':''}}">
+  <view class="order_detail" wx:if="{{order}}">
+    <view class="driver_info ">
+      <image class="drv_img" src="{{order.driverImg}}"></image>
+      <text class="drv_name">{{order.driverName?order.driverName:''}}</text>
+      <text class="order_time">{{order.time}}</text>
+    </view>
+    <view class="address flex-between" bindtap="lookTrace">
+      <view>
+        <view class="ad start-ad">
+          <image src="../../res/gray-location.png"></image>
+          从 <text>{{order.locationStart}}</text>
+        </view>
+        <view class="ad end-ad">
+          <image src="../../res/gray-location.png"></image>
+          到 <text>{{order.locationEnd}}</text>
+        </view>
+      </view>
+      <image class="right-icon" src="../../res/arrow_right.png"></image>
+    </view>
+    <view class="cost_detail" wx:if="{{showFee}}">
+      <view><text class="total_fee">{{order.income}}</text>元</view>
+      <view class="dis_time"><text>{{order.distance}}公里 </text> <text> {{order.costTime}}分钟</text></view>
+      <view class="look_feeDetail" bindtap="costDetail">
+        <text>查看费用明细</text>
+        <image class="right-icon" src="../../res/arrow_right.png"></image>
+      </view>
+    </view>
+    <view class="cost_detail close" wx:if="{{order.cancelOrderJson}}">
+      <view class="close_title">
+        {{order.cancelOrderJson.status}}
+      </view>
+      <view class="close_title2">
+        {{order.cancelOrderJson.reason}}
+      </view>
+    </view>
+  </view>
+  <view class="comment_wrap" wx:if="{{order && status != 2}}">
+    <view class="title">{{title}}</view>
+    <view class="star_list" bindtap="clickStar">
+      <block wx:for="{{starList}}" wx:key="item">
+        <image id="{{item.grade}}" data-grade="{{item.grade}}" src="{{item.iconPath}}"></image>
+      </block>
+    </view>
+    <view class="other_comment" wx:if="{{showComment}}">
+      <view class="tag_wrap" bindtap="chooseTag">
+        <block wx:for="{{remarks}}" wx:key="item">
+          <label class="{{item.active == '1' ? 'action' : ''}}" data-code="{{item.code}}" data-active="{{item.active}}" data-index="{{index}}">{{item.detail}}</label>
+        </block>
+      </view>
+      <view class="textarea_wrap">
+        <textarea class="other_txt" placeholder="匿名评价司机，说说他的其他表现" maxlength="-1" bindinput="getTextarea" placeholder-style="color: #cccccc;" />
+        <!-- <checkbox-group bindchange="monitorCheckbox" class="checkbox">
+          <checkbox value="" checked="{{checked}}" />投诉司机
+        </checkbox-group> -->
+      </view>
+      <button class="btn-submit" type="canCommit"  bindtap="commitComment">提交</button>
+    </view>
+  </view>
+</view>
+<view hidden="{{!flag.show}}" class="modal-content">{{flag.text}}</view>
+<red-packet acceptData= "{{redPacketData}}" showMapView= "{{false}}" bindcloseEvent="onCloseRedPacket" wx:if="{{showRedPacket}}"></red-packet>

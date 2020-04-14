@@ -1,0 +1,76 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"enhance": false,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.6",
+	"appid": "wxc31aa6bbea26d448",
+	"projectname": "edaijia",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "pages/polling/polling",
+					"pathName": "pages/polling/polling",
+					"query": "q= http://h5.d.edaijia.cn/driver-app-pack/driver-qrcode-order/driver.html?Y3JlYXRlVGltZT0xNTY2Nzg3MjI1NTY4JmRyaXZlcklkPUJKMjU2OTg=",
+					"scene": 1011
+				},
+				{
+					"id": 1,
+					"name": "shop",
+					"pathName": "pages/index/index",
+					"query": "q=http://h5.d.edaijia.cn/weixin/index.html?shopId=8471",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "扫自己司机",
+					"pathName": "pages/polling/polling",
+					"query": "q= http://h5.d.edaijia.cn/driver-app-pack/driver-qrcode-order/driver.html?Y3JlYXRlVGltZT0xNTY4NjkyNjE0ODEyJmRyaXZlcklkPUJKMjU2OTg=",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "小程序模板消息",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": 1014
+				}
+			]
+		}
+	}
+}

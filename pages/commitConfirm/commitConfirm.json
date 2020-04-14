@@ -1,0 +1,6 @@
+{
+  "disableScroll": true,
+  "usingComponents": {
+    "red-packet": "../../components/red-packet/index"
+  }
+}

@@ -1,0 +1,19 @@
+<view class="costEstimate-box" wx:if="{{feeDetail}}">
+  <view class="totalFee-box">
+    {{totalFee}}
+    <view class="txt">元</view>
+  </view>
+  <view class="tip-box">
+    <view class="border border-left"></view>
+    <view class="txt">费用明细</view>
+    <view class="border border-right"></view>
+  </view>
+  <view class="detail-box {{!item.isReduce ? '' : 'isReduce'}}" wx:for="{{feeDetail}}" wx:key="item">
+    <view class="left">{{item.key}}</view>
+    <view class="line"></view>
+    <view>{{item.value}}</view>
+  </view>
+</view>
+<view class="show-rule" style="top:{{ruleTop}}px">
+  <navigator url='../price/price?city={{region}}'>查看计价规则</navigator>
+</view>

@@ -1,0 +1,2 @@
+<!--pages/homeAd/homeAd.wxml-->
+<web-view src="{{adUrl}}"></web-view>

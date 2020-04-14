@@ -1,0 +1,106 @@
+/* pages/couponList/couponList.wxss */
+page{
+  box-sizing: border-box;
+  height: 100%;
+  background-color: #f5f5f5;
+}
+.list_container{
+  padding-bottom: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+}
+.list_item{
+  margin-top: 30rpx;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 30rpx;
+  width: 94%;
+  height: 216rpx;
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #E8E9EB;
+  border-bottom: 3px solid #DAB36B;
+}
+.list_item>image{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 189rpx;
+  height: 181rpx;
+}
+.list_left{
+  width: 500rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+}
+.list_item .list_title{
+  width: 430rpx;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 28rpx;
+}
+.list_item .list_time{
+  font-size: 20rpx;
+}
+.list_item .list_rule .rule_item{
+  font-size: 20rpx;
+  color: #9A9A9A;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:3;
+}
+.list_item .list_right{
+  padding-right: 10rpx;
+  position: relative;
+  width: 400rpx;
+  bottom: 30rpx;
+  text-align: right;
+  font-size: 24rpx;
+}
+
+.list_item .list_right .list_sum{
+  position: relative;
+  top: 5rpx;
+  display: inline;
+  font-size: 100rpx;
+  color: #FF4B14;
+}
+.height_line{
+  margin-bottom: 5rpx;
+}
+.more{
+  margin: 40rpx 0;
+}
+.empty{
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.empty .empty_info{
+  font-size: 24rpx;
+  color: #97989b;
+  margin-top: 28rpx;
+}
+.empty .empty_img{
+  width: 80rpx;
+  height: 78rpx;
+}
