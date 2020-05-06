@@ -1,7 +1,7 @@
 <view class="costEstimate-box" wx:if="{{feeDetail}}">
   <view class="totalFee-box">
     {{totalFee}}
-    <view class="txt">元</view>
+    <text class="txt">元</text>
   </view>
   <view class="tip-box">
     <view class="border border-left"></view>

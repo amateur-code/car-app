@@ -58,52 +58,7 @@ Page({
           strokeWidth: 0
         }
       ],
-      controls: [
-        {
-          id: 1,
-          iconPath: "../../res/center-location.png",
-          position: {
-            left: app.globalData.windowWidth / 2 - 11,
-            top: 0,
-            width: 22,
-            height: 38
-          },
-          clickable: false
-        },
-        {
-          id: 2,
-          iconPath: "../../res/location.png",
-          position: {
-            left: app.globalData.windowWidth - 60,
-            top: 0,
-            width: 50,
-            height: 50
-          },
-          clickable: true
-        },
-        {
-          id: 3,
-          iconPath: "../../res/qrCode.png",
-          position: {
-            left: app.globalData.windowWidth - 60,
-            top: 0,
-            width: 50,
-            height: 50
-          },
-          clickable: true
-        },
-        {
-          id: 4,
-          iconPath: "../../res/user.png",
-          position: {
-            left: 10,
-            top: 10,
-            width: 50,
-            height: 50
-          },
-          clickable: true
-        }
-      ],
+      controls: [],
       markers: []
     },
     homeAd: {},
@@ -149,17 +104,6 @@ Page({
   cityId: "",
   // 设置地图view
   setMapConfig: function(d) {
-    if (d == this.nowAddressHeight) return;
-    this.nowAddressHeight = d;
-    let that = this,
-      hh = app.globalData.windowHeight - (app.globalData.windowWidth / 750) * d;
-    that.setData({
-      calloutTop: hh / 2 - 88,
-      "map.height": hh,
-      ["map.controls[" + 0 + "].position.top"]: hh / 2 - 38,
-      ["map.controls[" + 1 + "].position.top"]: hh - 58,
-      ["map.controls[" + 2 + "].position.top"]: hh - 111
-    });
   },
   // 修改地图高度
   changeMapHeight() {
@@ -246,17 +190,24 @@ Page({
       this.scanIconClick = false;
       this.scanCode();
     } else {
-      if (!this.userIconClick) {
-        return;
-      }
-      this.userIconClick = false;
-      if (!app.globalData.userInfo || !app.globalData.userInfo.token || !app.globalData.userInfo.phone) {
-        this.gotoLogin();
-      } else {
-        wx.navigateTo({ url: "../personalCenter/personalCenter" });
-      }
+      
     }
   },
+  returnCenter(){
+    this.moveToLocation();
+  },
+  goToPersion(){
+    if (!this.userIconClick) {
+      return;
+    }
+    this.userIconClick = false;
+    if (!app.globalData.userInfo || !app.globalData.userInfo.token || !app.globalData.userInfo.phone) {
+      this.gotoLogin();
+    } else {
+      wx.navigateTo({ url: "../personalCenter/personalCenter" });
+    }
+  },
+
   // 回归到地图中心点
   moveToLocation() {
     this.refreshLoction().then(() => {
@@ -1576,6 +1527,8 @@ Page({
   },
   // 动调状态判断
   judgeDynamic(data, onload) {
+    data.dynamicRate = data.dynamicRate - 0;
+    data.dynamicFee = data.dynamicFee - 0;
     if (data.dynamicRate && data.dynamicRate * 1 != 0) {
       //动态调价
       this.setData({
@@ -1615,7 +1568,6 @@ Page({
       if (json.code != 0 || !json.data.home_ad.ads || json.data.home_ad.ads.length <= 0) {
         that.setData({
           showWelcome: false,
-          "map.controls[3].position.top": 10
         });
         return;
       }
@@ -1627,7 +1579,6 @@ Page({
         showWelcome: true,
         "homeAd.content": data.ads[0].content[0] || "",
         "homeAd.href": data.ads[0].href || "",
-        "map.controls[3].position.top": 55
       });
       clearInterval(that.noticeTimer);
       that.noticeTimer = setInterval(() => {

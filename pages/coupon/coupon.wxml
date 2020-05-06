@@ -1,34 +1,36 @@
 <view>
   <view class="header" wx:if="{{!isList}}">本次服务最多可使用一张代驾券</view>
   <view class="listNull" wx:else >暂无可用优惠券</view>
-
-  <view class='coupon_item' wx:for-items="{{dataList}}" wx:key="index">
-    <view  class="coupon-list" data-id="{{item.id}}" data-index="{{index}}" bindtap='getCouponId'>
-      <view class="icon" >
-        <text wx:if="{{!item.isChecked}}" class="icon-r" ></text>
-        <icon wx:else type="success" size="16" color='#4AA8EC' />
-      </view>
-      <view class="coupon-msg">
-        <image class='coupon_bg' src='../../res/coupon-bg.png'></image>
-        <view class='coupon_right'>
-          <view class="fee">
-            <block wx:if='{{item.bonusType == 1}}'>
-              <view class='num'>
-                <text class='rmbUnit'>￥</text>{{item.numberForShow}}</view>
-              <view class='unit'>立减</view>
-            </block>
-            <block wx:else>
-              <view class='num otherNum'>{{item.numberForShow}}</view>
-              <view class='unit'>{{item.unitForShow}}</view>
-            </block>
-          </view>
-          <view class='coupon_txt'>
-            <view class="title">{{item.name}}</view>
-            <view class="over-time">{{item.limitTime}}</view>
-            <view class="tip">{{item.remark}}</view>
+  <view class="list">
+    <view class='coupon_item' wx:for-items="{{dataList}}" wx:key="index">
+      <view  class="coupon-list" data-id="{{item.id}}" data-index="{{index}}" bindtap='getCouponId'>
+        <view class="icon" >
+          <text wx:if="{{!item.isChecked}}" class="icon-r" ></text>
+          <icon wx:else type="success" size="16" color='#4AA8EC' />
+        </view>
+        <view class="coupon-msg">
+          <image class='coupon_bg' src='../../res/coupon-bg.png'></image>
+          <view class='coupon_right'>
+            <view class="fee">
+              <block wx:if='{{item.bonusType == 1}}'>
+                <view class='num'>
+                  <text class='rmbUnit'>￥</text>{{item.numberForShow}}</view>
+                <view class='unit'>立减</view>
+              </block>
+              <block wx:else>
+                <view class='num otherNum'>{{item.numberForShow}}</view>
+                <view class='unit'>{{item.unitForShow}}</view>
+              </block>
+            </view>
+            <view class='coupon_txt'>
+              <view class="title">{{item.name}}</view>
+              <view class="over-time">{{item.limitTime}}</view>
+              <view class="tip">{{item.remark}}</view>
+            </view>
           </view>
         </view>
       </view>
     </view>
   </view>
+  
 </view>

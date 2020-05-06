@@ -108,6 +108,7 @@ Page({
           latitude: coord.lat,
           longitude: coord.lon
         };
+        console.log(app.globalData)
         wx.redirectTo({
           url: '../commitConfirm/commitConfirm'
         });

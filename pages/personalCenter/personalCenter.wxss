@@ -1,72 +1,67 @@
-page{
-  background: #f5f5f5;
+.person-center{
+  display: flex;
 }
-.wechat_info{
-  padding: 74rpx 0 76rpx;
-  text-align: center;
-}
-.wechat_info .avatarUrl{
-  width: 120rpx;
-  height: 120rpx;
-  border-radius: 50%;
-}
-.wechat_info .phone{
-  font-size: 24rpx;
-  margin-top: 30rpx;
-}
+
+
+
 .person_list{
-  background: #fff;
-  border-top: 1rpx solid #ededed;
-  border-bottom: 1rpx solid #ededed;
+  width: 300rpx;
+  min-height: 100vh;
+  padding: 0 19rpx;
+  box-shadow: -7px 0 30px 0 rgba(152,152,152,0.42);
 }
 .person_list .item{
-  padding-left: 30rpx;
-  height: 98rpx;
   display: flex;
-  align-items: center;
-  border-top: 1rpx solid #ededed;
+  height: 42rpx;
+  line-height: 42rpx;
+  font-size: 14rpx;
+  color: #19191A;
+  border-bottom: 1px solid #E8E9EB;
 }
-.person_list .item:first-child{
-  
+.txt{
+  flex:1;
 }
-.person_list .icon{
-  width: 32rpx;
-  height: 32rpx;
-  margin-right: 13rpx;
+.service_phone{
+  color: #969799;
 }
-.person_list .txt{
-  display: block;
-  font-size: 30rpx;
+
+.user-info{
   flex: 1;
 }
-.person_list .service_phone{
-  display: block;
-  font-size: 30rpx;
-  color: #999;
-}
-.person_list .arrow_icon{
-  width: 14rpx;
-  height: 24rpx;
-  padding: 0 30rpx;
-}
-.exit_btn{
-  width: 675rpx;
-  height: 90rpx;
-  border: 1rpx solid #dddddd;
+
+.wechat_info{
+  padding: 43rpx 0 0;
   text-align: center;
-  line-height: 90rpx;
-  box-sizing: border-box;
-  margin:  100rpx 30rpx 0;
-  background: #fff;
-  color: #999999;
 }
 .wechat_info button.getUser{
-  width: 120rpx;
-  height: 120rpx;
-  line-height: 120rpx;
-  border-radius: 120rpx;
+  width: 49rpx;
+  height: 49rpx;
+  line-height: 49rpx;
+  border-radius: 50%;
   padding-left: 0;
 }
 .wechat_info button.getUser::after{
   display: none;
+}
+.wechat_info .avatarUrl{
+  width: 49rpx;
+  height: 49rpx;
+  border-radius: 50%;
+}
+.wechat_info .phone{
+  font-size: 15rpx;
+  color: #19191A;
+  margin-top: 12rpx;
+}
+
+.exit_btn{
+  width: 222rpx;
+  height: 45rpx;
+  font-size: 15rpx;
+  text-align: center;
+  line-height: 45rpx;
+  margin: 40rpx auto 0;
+  background-color: #E0E2E6;
+  color: #19191A;
+  border-radius: 5rpx;
 }

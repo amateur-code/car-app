@@ -18,7 +18,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.6",
+	"libVersion": "1.9.4",
 	"appid": "wxc31aa6bbea26d448",
 	"projectname": "edaijia",
 	"simulatorType": "wechat",
@@ -39,8 +39,12 @@
 		"game": {
 			"list": []
 		},
-		"miniprogram": {
+		"gamePlugin": {
 			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 4,
 			"list": [
 				{
 					"id": 0,
@@ -69,6 +73,76 @@
 					"pathName": "pages/index/index",
 					"query": "",
 					"scene": 1014
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/personalCenter/personalCenter",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "优惠券",
+					"pathName": "pages/couponList/couponList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单",
+					"pathName": "pages/orderHistory/orderHistory",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "订单详情",
+					"pathName": "pages/orderDetail/orderDetail",
+					"query": "orderId=973496856&fromHistory=true&status=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "费用详情",
+					"pathName": "pages/historyDetail/historyDetail",
+					"query": "orderId=973496856",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "address",
+					"pathName": "pages/address/address",
+					"query": "orderId=973496856",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "确认",
+					"pathName": "pages/commitConfirm/commitConfirm",
+					"query": "orderId=973496856",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/costEstimate/costEstimate",
+					"pathName": "pages/costEstimate/costEstimate",
+					"query": "start_lat=39.9219&start_lng=116.44355&end_lat=39.86511540630113&end_lng=116.37902388245611&source=5&address_from=北京市朝阳区人民政府&address_to=北京南站&channel=01003",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/coupon/coupon",
+					"pathName": "pages/coupon/coupon",
+					"query": "bonusId=undefined&price=39.00&orderId=973496898&couponBind=%7B%22id%22%3A%222528350%22%2C%22sn%22%3A%22175799201611%22%2C%22money%22%3A%227.00%22%2C%22limit_time%22%3A%222020-05-15%2023%3A59%3A00%22%2C%22status%22%3A%221182326%22%2C%22used_time%22%3A%220%22%2C%22channel_limited%22%3A%220%22%2C%22name%22%3A%22%E4%BC%81%E4%B8%9A%E9%94%80%E5%94%AE%22%2C%22remark%22%3A%22%E9%99%90APP%26%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%26%E6%94%AF%E4%BB%98%E5%AE%9D%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%94%AF%E4%BB%98%E4%BD%BF%E7%94%A8%22%2C%22support_channel%22%3A%5B0%2C1%5D%2C%22bonus_type%22%3A%221%22%2C%22discount%22%3A%220.0%22%2C%22effective_date%22%3A%222020-04-15%2016%3A10%3A00%22%2C%22max_amount%22%3A%220%22%2C%22is_red_card%22%3A%220%22%2C%22rmb%22%3A%22%C2%A5%22%2C%22unit_for_show%22%3A%22%E5%85%83%22%2C%22unit_for_show_new%22%3A%22%E7%AB%8B%E5%87%8F%22%2C%22valid_time%22%3A%22%E6%9C%89%E6%95%88%E6%9C%9F%E8%87%B32020-05-15%2023%3A59%3A00%22%2C%22number_for_show%22%3A%227.00%22%7D&couponBinded=%7B%7D&userBonus=true",
+					"scene": null
 				}
 			]
 		}

@@ -4,18 +4,15 @@
     <view class="empty_info">暂无代驾券</view>
   </view>
   <view class="list_item" wx:for="{{couponList}}" wx:key="item">
-    <image src="../../res/couponlist-bg.png"></image>
-    <view class="list_left"  style="width:{{item.numberForShow ? item.numberForShow * 1 >= 100 ? '400rpx' : 'auto' :'auto'}};">
-      <view style="padding-bottom: 10rpx;width:100%;">
-        <view class="list_title height_line">
-          {{item.name}}
-        </view>
-        <view class="list_time">
-          有效期至{{item.limitTime}}
-        </view>
+    <view class="list_left">
+      <view class="list_title">
+        {{item.name}}
+      </view>
+      <view class="list_time">
+        有效期至{{item.limitTime}}
       </view>
       <view class="list_rule">
-        <view class="rule_item">{{item.remark}}</view>
+        {{item.remark}}
       </view>
     </view>
     <view class="list_right" wx:if="{{item.bonusType == 1}}">

@@ -1,218 +1,47 @@
+.commit-confirm{
+    display: flex;
+}
 .address-wrapper{
-  box-sizing: border-box;
-  padding: 20rpx 20rpx 60rpx;
-  height: 320rpx;
-  box-sizing: border-box;
+    padding: 0 20rpx;
+    margin: 9.75rpx;
+    width: 280rpx;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.15), 0 14px 32px 2px rgba(0,0,0,0.15);
+    border-radius: 5rpx;
 }
+
 .address-msg {
+    position: relative;
     display: block;
     width: 100%;
-    height: 100%;
-    /* margin: 23rpx 16rpx 23rpx 16rpx; */
-    background: #fff;
-    position: relative;
+    min-height: 100%;
+    padding-bottom: 62rpx;
 }
-
-
-.show-more {
-    width: 60rpx;
-    height: 60rpx;
-    position: absolute;
-    top: -30rpx;
-    right: 5rpx;
-}
-
-.show-more.showDown {
-    transform: rotate(-180deg);
-    -webkit-transform: rotate(-180deg);
-}
-
-.price-tip {
-    font-size: 24rpx;
-    height: 80rpx;
-    line-height: 80rpx;
-    position: relative;
+.costestimateFee{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-top: 28.86rpx;
     text-align: center;
+    font-size: 14rpx;
+    color: #19191A;
 }
-
-.price-tip .price-btn {
-    width: 120rpx;
-    height: 80rpx;
-    line-height: 80rpx;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.location-wrap {
-    padding-left: 56rpx;
-    position: relative;
-    /* top: 2px; */
-}
-
-.location-wrap::before {
-    content: "";
-    display: block;
-    width: 16rpx;
+.costestimateFee text{
     height: 16rpx;
-    border-radius: 50%;
-    position: absolute;
-    left: 10rpx;
-    top: 50%;
-    margin-top: -8rpx;
+    padding: 0 2rpx;
 }
-
-.location-wrap text {
-    display: block;
-    height: 90rpx;
-    line-height: 90rpx;
+.costestimateFee .num{
     font-size: 28rpx;
-    color: #000;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    /* border-top: 1rpx solid #ddd; */
+    height: 30rpx;
 }
-
-.location-wrap.start-location text.borderNone {
-    border: none;
-}
-
-.location-wrap.start-location::before {
-    background: #2bd48b;
-}
-
-.location-wrap.end-location::before {
-    background: #ff6113;
-}
-
-.location-wrap.end-location text {
-    color: #ccc;
-}
-
-.fee-line {
-    width: 100%;
-    height: 1rpx;
-    border-bottom: 1rpx solid #ddd;
-    position: relative;
-}
-
-.location-coupon {
-    display: flex;
-    justify-items: center;
-    padding-left: 56rpx;
-    position: relative;
-}
-
-.location-coupon text {
-    display: block;
-    height: 90rpx;
-    line-height: 90rpx;
-    font-size: 28rpx;
-    color: #000;
-}
-
-.location-coupon .coupon-no {
-    display: flex;
-    align-items: center;
-    justify-items: center;
-}
-
-.location-coupon .coupon-no image {
-    position: relative;
-    bottom: 1rpx;
-}
-
-.location-coupon .arrow {
-    position: relative;
-    margin-left: 10rpx;
-    height: 25rpx;
-    width: 15rpx;
-}
-
-.location-coupon .icon {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 32rpx;
-    width: 32rpx;
-    left: 5rpx;
-}
-
-.location-coupon .inner {
-    width: 100%;
-    height: 90rpx;
-    /* border-top: 1rpx solid #ddd; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.costestimate {
-    padding-top: 1rpx;
-    position: relative;
-    display: flex;
-    display: -webkit-flex;
-    flex-direction: column;
-    -webkit-flex-direction: column;
-    justify-items: center;
-    justify-content: space-around;
-    align-content: space-around;
-    align-items: center;
-    -webkit-justify-items: center;
-    -webkit-justify-content: space-around;
-    -webkit-align-content: space-around;
-    -webkit-align-items: center;
-    font-size: 24rpx;
-    height: 110rpx;
-    color: #19191a;
-}
-
-.costestimate .costestimateFee {
-    margin-bottom: 8rpx;
-    display: flex;
-    display: -webkit-flex;
-    height: 37rpx;
-    align-items: baseline;
-    -webkit-align-items: baseline;
-    justify-content: center;
-    -webkit-justify-content: center;
-    padding-left: 30rpx;
-}
-
-.costestimate_hint {
-    font-size: 28rpx;
-    height: 110rpx;
-    position: relative;
-    /* border-top: 1rpx solid #ddd; */
-    display: flex;
-    display: -webkit-flex;
-    align-items: center;
-    -webkit-align-items: center;
-    justify-content: center;
-    -webkit-justify-content: center;
-    color: #666;
-}
-
-.costestimate .arrow-icon {
-    position: relative;
-    top: 2rpx;
-    width: 12rpx;
-    height: 22rpx;
-    padding: 0 10rpx;
-}
-
-.costestimate .num {
-    position: relative;
-    top: 2rpx;
-    font-size: 40rpx;
-    color: #000;
+.costestimateFee image{
+    height: 14rpx;
+    width: 8rpx;
 }
 
 .costestimate .ticketFee {
-    position: relative;
-    top: 4rpx;
-    font-size: 20rpx;
+    margin-top: 15.6rpx;
+    font-size: 11.7rpx;
     text-align: center;
     color: #8C929C;
 }
@@ -220,10 +49,21 @@
 .costestimate .ticketFee .ticketNo {
     color: #ff4b14;
 }
+
 .dynamic{
-    font-size: 20rpx;
+    margin-top: 5rpx;
+    font-size: 11.7rpx;
+    text-align: center;
     color: #8C929C;
 }
+
+.costestimate_hint {
+    padding-top: 28.86rpx;
+    text-align: center;
+    font-size: 14rpx;
+    color: #19191A;
+}
+
 
 button::after {
     border: none;
@@ -231,19 +71,34 @@ button::after {
 
 button.commitBtn {
     position: absolute;
-    bottom: 0rpx;
+    bottom: 12rpx;
     width: 100%;
-    height: 100rpx;
-    line-height: 100rpx;
-    font-size: 32rpx;
+    height: 38rpx;
+    line-height: 38rpx;
+    font-size: 14.8rpx;
     border-radius: 4rpx;
     background: #3b414d;
     color: #ffffff;
 }
+
+#confirmMap{
+    flex: 1;
+    height: 100vh;
+}
+
 .center_btn{
     position: absolute;
-    right: 10rpx;
-    bottom: 350rpx;
-    width: 100rpx;
-    height: 100rpx;
+    left: 300rpx;
+    bottom: 11rpx;
+    width: 46rpx;
+    height: 46rpx;
 }
+
+
+
+
+
+
+
+
+

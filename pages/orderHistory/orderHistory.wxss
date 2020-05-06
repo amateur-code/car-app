@@ -1,74 +1,67 @@
-page{
-  box-sizing: border-box;
-  height: 100%;
-  background-color: #f5f5f5;
-}
 .list_container{
-  padding-bottom: 40rpx;
+  padding: 20rpx 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
+  flex-wrap: wrap;
   width: 100%;
+  background: #fcfdff;
 }
+
 .list_item{
-  margin-top: 30rpx;
-  box-sizing: border-box;
-  padding: 35rpx 36rpx;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  width: 94.7%;
-  height: 240rpx;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
+  margin: 20rpx 8rpx;
+  width: 234rpx;
+  box-shadow: 0 0 14px 0 rgba(0,0,0,0.20);
   background-color: #ffffff;
 }
-.list_item .list_item_title{
-  margin-bottom: 10rpx;
+.status_btn{
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 100%;
-}
-.list_item .list_item_title .title{
-  font-size: 28rpx;
-}
-.list_item .list_item_title .status_btn{
-  font-size: 24rpx;
+  padding: 0 17rpx;
+  font-size: 14rpx;
+  height: 44.85rpx;
   color: #7D7E80;
+  line-height: 44.85rpx;
+  border-bottom: 1px solid #E8E9EB;
 }
-.list_item .list_item_title .status_btn.disabled{
-  pointer-events: none;
+.status_btn image{
+  display: inline-block;
+  margin-left: 5rpx;
+  width: 10rpx;
+  height: 14rpx;
 }
-.list_item .list_item_title .status_btn image{
-  margin-left: 15rpx;
-  position: relative;
-  top: 4rpx;
-  width: 14rpx;
-  height: 24rpx;
+.body{
+  padding: 0 17rpx 32rpx;
 }
-.list_item .list_item_time{
-  margin-bottom: 10rpx;
+
+.title{
+  margin-top: 24.57rpx;
+  font-size: 15.6rpx;
+  color: #19191A;
 }
-.list_item .list_item_time, .list_item .list_item_address_start, .list_item .list_item_address_end{
-  max-width: 100%;
+
+.list_item_time{
+  margin-top: 16rpx;
+  font-size: 14rpx;
+  color: #646566;
+}
+.list_item_address_start{
+  margin-top: 16rpx;
+}
+.list_item .list_item_address_start,
+.list_item .list_item_address_end{
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  font-size: 24rpx;
+  font-size: 14rpx;
+  line-height: 15rpx;
   color: #646566;
 }
-.list_item .list_item_address_start image, .list_item .list_item_address_end image{
-  position: relative;
-  top: 6rpx;
-  right: 2rpx;
-  width: 28rpx;
-  height: 28rpx;
+.list_item .list_item_address_start image, 
+.list_item .list_item_address_end image{
+  width: 15rpx;
+  height: 15rpx;
 }
-.more{
-  margin-top: 40rpx;
-}
+
+
 .empty{
   position: absolute;
   top: 35%;

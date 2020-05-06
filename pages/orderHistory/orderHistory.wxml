@@ -1,36 +1,45 @@
 <view class="list_container">
-  <view class="empty" wx:if="{{showEmpty}}" >
-    <image class="empty_img" src="../../res/empty.png"></image>
-    <view class="empty_info">暂无订单，快去叫代驾吧</view>
-  </view>
-  <view class="list_item" wx:for="{{orderList}}" data-status="{{item.status}}" data-orderid="{{item.id}}" wx:key="item" bindtap="goDetail">
-    <view class="list_item_title">
-      <view class="title">
-        {{item.title}}
-      </view>
-      <view class="status_btn" wx:if="{{item.status == 2}}">
-        已关闭<image src="../../res/arrow_right_dark.png"></image>
-      </view>
-      <view class="status_btn" wx:if="{{item.status == 1}}">
-        已完成<image src="../../res/arrow_right_dark.png"></image>
-      </view>
-      <view class="status_btn" wx:if="{{item.status > 100}}">
-        进行中<image src="../../res/arrow_right_dark.png"></image>
-      </view>
-    </view>
-    <view class="list_item_time">
-      {{item.create_time}}
-    </view>
-    <view class="list_item_address_start">
-      <image src="../../res/icon_start.png"></image>
-      {{item.location_start}}
-    </view>
-    <view class="list_item_address_end">
-      <image src="../../res/icon_terminus.png"></image>
-      {{item.location_end || item.end}}
-    </view>
-  </view>
-  <!-- <view class="more" bindtap="getMore" wx:if="{{hasMoreOrder}}">
-    更多 . . .
-  </view> -->
+	<view class="empty" wx:if="{{showEmpty}}">
+		<image class="empty_img" src="../../res/empty.png" />
+		<view class="empty_info">暂无订单，快去叫代驾吧</view>
+	</view>
+	<view
+	 class="list_item"
+	 wx:for="{{orderList}}"
+	 data-status="{{item.status}}"
+	 data-orderid="{{item.id}}"
+	 wx:key="item"
+	 bindtap="goDetail"
+	>
+		<view class="status_btn" wx:if="{{item.status == 2}}">
+			已关闭
+			<image src="../../res/arrow_right_dark.png" />
+		</view>
+		<view class="status_btn" wx:if="{{item.status == 1}}">
+			已完成
+			<image src="../../res/arrow_right_dark.png" />
+		</view>
+		<view class="status_btn" wx:if="{{item.status > 100}}">
+			进行中
+			<image src="../../res/arrow_right_dark.png" />
+		</view>
+		<view class="body">
+			<view class="title">
+				{{item.title}}
+			</view>
+			<view class="list_item_time">
+				{{item.create_time}}
+			</view>
+			<view class="list_item_address_start">
+				<image src="../../res/icon_start.png" />
+				{{item.location_start}}
+			</view>
+			<view class="list_item_address_end">
+				<image src="../../res/icon_terminus.png" />
+				{{item.location_end || item.end}}
+			</view>
+		</view>
+
+	</view>
 </view>
+

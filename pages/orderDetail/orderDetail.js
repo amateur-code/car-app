@@ -99,6 +99,8 @@ Page({
         'order.orderId': data.orderId,
         'order.driverImg': data.driver.pictureSmall,
         'order.driverName': data.driver.name,
+        'order.driverId': data.driver.driverId,
+        'order.driverYear': data.driver.year,
         'order.time': time_arr,
         'order.locationStart': data.locationStart,
         'order.locationEnd': data.locationEnd,

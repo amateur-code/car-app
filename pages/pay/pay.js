@@ -409,6 +409,12 @@ Page({
   //选券
   getCoupon() {
     let that = this;
+    console.log('../coupon/coupon?bonusId=' + that.data.nowBonusId +
+    '&price=' + that.data.order.income +
+    '&orderId=' + app.globalData.order.orderId +
+    "&couponBind=" + encodeURIComponent(JSON.stringify(this.data.order.couponBind)) +
+    "&couponBinded=" + encodeURIComponent(JSON.stringify(this.data.order.couponBinded)) +
+    "&userBonus=" + this.userBonus)
     if (!that.data.limitCoupon) {
       wx.navigateTo({
         url: encodeURI('../coupon/coupon?bonusId=' + that.data.nowBonusId +

@@ -1,163 +1,199 @@
-page{
-  background: #f5f5f5;
-}
-.order_detail{
-  padding: 0 30rpx;
-  margin-top: 30rpx;
-  background: #fff;
-}
-.driver_info{
-  height: 108rpx;
-  border-bottom: 1rpx solid #f5f5f5;
+.page-wrap{
   display: flex;
-  align-items: center;
+  background: #FCFDFF;
 }
-.driver_info .drv_img{
-  width: 68rpx;
-  height: 68rpx;
-  border: 1rpx solid #ececec;
-  border-radius: 50%;
-  margin-right: 20rpx; 
+.left{
+  width: 300rpx;
+  background: rgba(255,255,255,0.80);
+  box-shadow: 0 0 20px 0 rgba(152,152,152,0.28);
 }
-.driver_info .drv_name{
-  flex: 1;
-  font-size: 28rpx;
+.right{
+  margin-left: 20px;
+  flex:1;
 }
-.driver_info .order_time{
-  padding-right: 30rpx ;
-  font-size: 20rpx;
-}
-.address{
-  padding: 0 20rpx 0 10rpx; 
-  border-bottom: 1rpx solid #f0f0f0;
-}
-.address .right-icon{
-  width: 14rpx;
-  height: 24rpx;
-  padding-top: 50rpx;
-}
-.address .ad{
-  font-size: 26rpx;
-  color: #999999;
-  position: relative;
-}
-.address .ad.start-ad{
-  padding: 15rpx 20rpx 10rpx 0;
-}
-.address .ad.end-ad{
-  padding: 10rpx 20rpx 20rpx 0;
-}
-.address .ad image{
-  width: 24rpx;
-  height: 32rpx;
-  position: relative;
-  top: 6rpx;
-}
-.address .ad text{
-  color: #000;
-}
+
+/* --------------------费用--------------------- */
 .cost_detail{
-  padding-top: 47rpx;
   text-align: center;
-  font-size: 24rpx;
+  padding-bottom: 20rpx;
 }
-.cost_detail .total_fee{
-  font-size: 60rpx;
+.total_fee {
+  font-size: 14rpx;
 }
-.cost_detail .dis_time{
-  font-size: 20rpx;
+.total_fee text{
+  font-size: 30rpx;
+  color: #19191A;
 }
-.cost_detail .look_feeDetail{
-  color: #666;
-  padding: 50rpx 40rpx 40rpx;
+.dis_time{
+  font-size: 14rpx;
 }
-.cost_detail .look_feeDetail image{
-  width: 15rpx;
-  height: 24rpx;
+.look_feeDetail{
   position: relative;
-  top: 4rpx;
-  margin-left: 10rpx;
+  display: inline-block;
+  padding: 20rpx 14rpx 0 0;
+  font-size: 14rpx;
+  line-height: 14rpx;
 }
+.look_feeDetail image{
+  position: absolute;
+  right: 0;
+  width: 8rpx;
+  height: 14rpx;
+}
+
 .close{
-  padding: 47rpx 0;
+  padding: 20rpx 0;
 }
 .close .close_title{
   color: #646566;
-  font-size: 28rpx;
+  font-size: 14rpx;
 }
 .close .close_title2{
   color: #646566;
-  font-size: 24rpx;
-  margin-top: 20rpx;
+  font-size: 14rpx;
+  margin-top: 10rpx;
 }
+
+/* --------------------评价--------------------- */
 .comment_wrap{
-  padding: 84rpx 85rpx 100rpx;
-  border-top: 1rpx solid #eeeeee;
+  padding: 20rpx 0 0;
+  border-top: 1px solid #E8E9EB;
 }
 .comment_wrap .title{
-  font-size: 30rpx;
+  font-size: 15.6rpx;
+  color: #19191A;
   text-align: center;
-  color: #666;
 }
+
 .comment_wrap .star_list{
   text-align: center;
-  margin-top: 50rpx;
+  margin-top: 14rpx;
+  line-height: 0;
 }
 .comment_wrap .star_list image{
-  width: 61rpx;
-  height: 57rpx;
-  margin-right: 28rpx;
+  width: 27.3rpx;
+  height: 26.23rpx;
+  margin-right: 17rpx;
+}
+
+.other_comment {
+  width: 350rpx;
+  margin: 0 auto;
 }
 .other_comment .tag_wrap{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 42rpx; 
+  
 } 
 .other_comment .tag_wrap label{
-  display: inline-block;
-  width: 31%;
-  height: 50rpx;
-  line-height: 50rpx;
-  border: 1rpx solid #dddddd;
+  display: block;
+  margin: 15rpx 0 0;
+  width: 100rpx;
   text-align: center;
-  font-size: 22rpx;
-  color: #666666;
+  height: 32rpx;
+  line-height: 32rpx;
+  border: 1px solid #19191A;
+  font-size: 14px;
+  color: #969799;
   background: #fff;
-  margin-top: 18rpx;
   border-radius: 4rpx;
 }
+
 .other_comment .tag_wrap label.action{
   background: #3b414d;
   color: #fff;
   border: 1rpx solid #3b414d;
 }
+
 .other_comment .textarea_wrap{
   position: relative;
+  line-height: 0;
 }
 .other_comment .other_txt{
-  box-sizing: border-box;
-  overflow: hidden;
+  margin-top: 20rpx;
   width: 100%;
-  height: 170rpx;
-  padding: 20rpx;
-  margin: 40rpx 0;
+  height: 100rpx;
+  padding: 10rpx;
+  font-size: 14rpx;
   border: 1rpx solid #dddddd;
-  font-size: 24rpx;
-  background: #fff;
+  background-color: #fff;
 }
-.other_comment .checkbox{
-  position: absolute;
-  bottom: 30rpx;
-  left: 50rpx;
-  font-size: 24rpx;
-  color: #666;
+
+.btn-submit{
+  margin-top: 20rpx;
+  background: #3b414d;
+  border-color: #3b414d;
+  border-radius: 4rpx;
 }
-.other_comment .checkbox checkbox .wx-checkbox-input{
-  width: 30rpx;
-  height: 30rpx;
+
+/* ---------------- order-detail ------------------- */
+.order_detail{
+  padding: 30rpx 0;
+  margin:  0 auto;
+  width: 308rpx;
+}
+.driver_info{
+  display: flex;
+  line-height: 0;
+  padding: 0 20rpx 16rpx;
+  border-bottom:1px solid #E8E9EB;
+}
+.driver_info .drv_img{
+  width: 49rpx;
+  height: 49rpx;
   border-radius: 50%;
+  margin-right: 9rpx; 
 }
+.driver_info .drv_name{
+  display: block;
+  line-height: 29rpx;
+  font-size: 14rpx;
+  color: #19191A;
+}
+.driver_info .order_year{
+  line-height: 20rpx;
+  font-size: 14rpx;
+  color: #7D7E80;
+}
+.order_time{
+  padding: 0 20rpx;
+  display: flex;
+  align-items: center;
+  line-height: 51rpx;
+  font-size: 14rpx;
+  color: #19191A;
+  border-bottom:1px solid #E8E9EB;
+}
+.order_time image{
+  margin-right: 10rpx;
+  width: 16rpx;
+  height: 16rpx;
+}
+
+.address{
+  padding: 15.6rpx 20rpx; 
+}
+.start, .end{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 15.6rpx;
+  line-height: 15.6rpx;
+  color: #19191A;
+}
+.end{
+  margin-top: 10rpx;
+}
+.start image,.end image{
+  margin-right: 10rpx;
+  width:  15.6rpx;
+  height:  15.6rpx;
+}
+
+
+
+
 .modal-content{
   width: 320rpx;
   height: 50rpx;
@@ -173,17 +209,5 @@ page{
   text-align: center;
   background: rgba(0, 0, 0, 0.7)
 }
-.btn-submit{
-  background: #3b414d;
-  border-color: #3b414d;
-  border-radius: 4rpx;
-}
-.prevent-default{
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: fixed;
-  z-index: 0;
-}
+
+

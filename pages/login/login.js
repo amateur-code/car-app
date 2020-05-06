@@ -85,7 +85,7 @@ Page({
     let that = this;
     let params = {
       phone: that.data.phone,
-      udid: app.globalData.userInfo.openId,
+      // udid: app.globalData.userInfo.openId,
       passwd: that.data.captcha
     }
     mCLogin(params).then(function (result) {
@@ -149,7 +149,7 @@ Page({
     console.log(this.data.phone)
     mGetSms({
       phone: this.data.phone,
-      udid: app.globalData.userInfo.openId || '20000001'
+      // udid: app.globalData.userInfo.openId || '20000001'
     }).then(function (result) {
       loading.hide();
       that.isClickCaptcha = false;

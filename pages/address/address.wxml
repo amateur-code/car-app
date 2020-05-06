@@ -1,20 +1,36 @@
 <view class="page-content">
-  <view class="header-wrapper">
-    <input class="address-input" type="text" focus="{{true}}" value="{{value}}" placeholder='{{enterTxt}}' data-show='hide' bindinput="changeAddress"></input>
-    <text class="cancel_btn" bindtap="cancelClick">取消</text>
-  </view>
-  <view class="searchnone" wx:if="{{!addressList || addressList.length == 0}}">
-    <image style="width:100%;height:100%;" src="../../res/searchnone.png"></image>
-    <view style="text-align: center;font-size: 28rpx;color:#969799;">
-      暂无搜索结果
-    </view>
-  </view>
-  <view wx:if="{{!cityListStatus}}" hidden="{{addressList.length == 0}}" class="address-list-container">
-    <scroll-view scroll-y="{{true}}" class="address-list">
-      <view class="address" wx:for="{{addressList}}" wx:for-index="index" wx:for-item="item" wx:key="unique" data-index="{{index}}" wx:if="{{item.location.lat}}" bindtap="selectAddress">
-        <view class="address-name">{{item.name}}</view>
-        <view class="address-area">{{item.address || item.addressDetail || (item.city + item.district)}}</view>
-      </view>
-    </scroll-view>
-  </view>
+	<view class="header-wrapper">
+		<view class="cancel_btn" bindtap="cancelClick">取消</view>
+		<input
+		 class="address-input"
+		 type="text"
+		 focus="{{true}}"
+		 value="{{value}}"
+		 placeholder='{{enterTxt}}'
+		 data-show='hide'
+		 bindinput="changeAddress"
+		/>
+	</view>
+	<view class="searchnone" wx:if="{{!addressList || addressList.length == 0}}">
+		<image src="../../res/searchnone.png" />
+		<text>暂无搜索结果</text>
+	</view>
+	<view wx:if="{{!cityListStatus}}" hidden="{{addressList.length == 0}}" class="address-list-container">
+		<scroll-view scroll-y="{{true}}" class="address-list">
+			<view
+			 class="address"
+			 wx:for="{{addressList}}"
+			 wx:for-index="index"
+			 wx:for-item="item"
+			 wx:key="unique"
+			 data-index="{{index}}"
+			 wx:if="{{item.location.lat}}"
+			 bindtap="selectAddress"
+			>
+				<view class="address-name">{{item.name}}</view>
+				<view class="address-area">{{item.address || item.addressDetail || (item.city + item.district)}}</view>
+			</view>
+		</scroll-view>
+	</view>
 </view>
+

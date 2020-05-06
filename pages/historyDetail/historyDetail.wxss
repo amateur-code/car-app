@@ -1,51 +1,32 @@
-Page {
-  background: #f5f5f5;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-.costEstimate-box {
-  padding: 95rpx;
-}
-.totalFee-box {
-  font-size: 100rpx;
-  text-align: center;
-}
-
-.totalFee-box .txt {
-  font-size: 24rpx;
-}
-
-.tip-box {
-  display: flex;
-  display: -webkit-flex;
-  height: 35rpx;
-  width: 100%;
-  color: #19191A;
-  font-size: 20rpx;
-  align-items: center;
-  justify-content: center;
-  margin: 140rpx 0 40rpx;
+.costEstimate-box{
+  width: 500rpx;
+  margin: 0 auto;
 }
 .totalFee-box{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  line-height: 100rpx;
-  height: 100rpx;
-  font-size: 100rpx;
+  line-height: 40rpx;
+  height: 40rpx;
+  font-size: 40rpx;
   text-align: center;
 }
 .totalFee-box .txt{
-  position: absolute;
-  right: -24rpx;
-  bottom: -24rpx;
   font-size: 24rpx;
 }
+
+.totalFee-box .txt {
+  font-size: 20rpx;
+}
+
+.tip-box {
+  padding: 20rpx 0 10rpx;
+  color: #19191A;
+  font-size: 14rpx;
+  text-align: center;
+}
+
 .detail-box {
   display: flex;
   display: -webkit-flex;
-  font-size: 24rpx;
+  font-size: 14rpx;
   padding-bottom: 25rpx;
   align-items: center;
   justify-content: center;
@@ -71,7 +52,7 @@ Page {
 }
 
 .show-rule {
-  font-size: 24rpx;
+  font-size: 14rpx;
   position: fixed;
   width: 100%;
   text-align: center;

@@ -415,7 +415,6 @@ Page({
     };
     mCostEstimate(params).then(json => {
       loading.hide();
-
       if (json.code === "5" || json.code === "2") {
         that.setData({
           "costestimateData.hint": true,
@@ -454,7 +453,7 @@ Page({
     let query = Object.keys(data).map(function (key) {
       return key + "=" + data[key];
     }).join("&");
-
+    console.log("../costEstimate/costEstimate?" + query)
     wx.navigateTo({
       url: "../costEstimate/costEstimate?" + query
     });
