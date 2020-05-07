@@ -27,7 +27,7 @@ const MINIAPP_ENV = 'development';
  */
 
 const from = {
-  from: '02050060',
+  from: '01051881',
   daijiaoFrom: ''
 },
 resource = {

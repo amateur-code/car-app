@@ -14,8 +14,8 @@
 
 .user{
   display: block;
-  width: 30rpx;
-  height: 30rpx;
+  width: 40rpx;
+  height: 40rpx;
 }
 
 .address-msg{
@@ -51,6 +51,9 @@
   font-size: 14.04rpx;
   color: #19191A;
   line-height: 47rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .start text{

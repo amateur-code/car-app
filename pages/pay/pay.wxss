@@ -145,3 +145,40 @@ button.payCommit{
   padding: 0 5rpx;
 }
 
+.qrcode-container-cover{
+  position: fixed;
+  left: 0;right: 0;
+  top: 0; bottom: 0;
+}
+.qrcode-container{
+  position: fixed;
+  display: flex;
+  padding: 30rpx;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  width: 300rpx;
+  height: 160rpx;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  border-radius: 10rpx;
+  box-shadow: -7px 0 30px 0 rgba(152,152,152,0.42);
+}
+.qrcode-container .canvas-right{
+  padding-top: 20rpx;
+  flex:1;
+  padding-left: 20rpx;
+  font-size: 14rpx;
+  color: #969799;
+  text-align: center;
+}
+.qrcode-container .canvas-right .cast{
+  font-size: 15.6rpx;
+  color: #19191A;
+
+}
+.qrcode-container .canvas-right .cast text{
+  padding-top: 10rpx;
+  font-size: 18.72rpx;
+  color: #FF4B14;
+}

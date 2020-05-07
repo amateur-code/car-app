@@ -76,9 +76,6 @@ const request = (model, baseUrl, method, hideError) => {
           wx.showModal({
             content: "您的账号信息已失效，请重新登录",
             success: function (json) {
-              // wx.redirectTo({
-              //   url: "../authorizeLogin/authorizeLogin"
-              // });
             }
           });
           return reject();

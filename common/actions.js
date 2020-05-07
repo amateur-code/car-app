@@ -191,7 +191,7 @@ export const mOrderPay = params => {
  */
 export const mPayWx = params => {
   Object.assign(params, {
-    apiUrl: "oeapi/payWx",
+    apiUrl: "oeapi/pay/weixinCarPay",
   })
   return postOpen(params);
 };

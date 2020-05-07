@@ -471,14 +471,7 @@ Page({
   // 跳转登录页面
   gotoLogin: function (driverId) {
     loading.hide();
-    wx.redirectTo({ url: '../authorizeLogin/authorizeLogin?mode=scanCode&driverId=' + driverId });
-    // wx.showModal({
-    //   title: '您未登录，请先登录',
-    //   showCancel: false,
-    //   complete: function () {
-    //     wx.redirectTo({ url: '../authorizeLogin/authorizeLogin?mode=scanCode&driverId=' + driverId });
-    //   }
-    // });
+    wx.redirectTo({ url: '../login/login?mode=scanCode&driverId=' + driverId });
   },
   getUserInfo: function () {
     return new Promise(resolve => {
@@ -502,9 +495,7 @@ Page({
             wx.showModal({
               content: "您的账号信息已失效，请重新登录",
               success: function (json) {
-                wx.navigateTo({
-                  url: "../authorizeLogin/authorizeLogin?mode=scanCode&driverId=" + that.driverId
-                });
+                wx.navigateTo({url: "../login/login?mode=scanCode&driverId=" + that.driverId});
               }
             });
             return;

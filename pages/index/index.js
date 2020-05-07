@@ -265,14 +265,6 @@ Page({
           if (!app.globalData.userInfo.token || !app.globalData.userInfo.phone) {
             loading.hide();
             this.gotoLogin()
-            // wx.showModal({
-            //   title: "您未登录，请先登录",
-            //   showCancel: false,
-            //   complete: function() {
-            //     wx.navigateTo({ url: "../authorizeLogin/authorizeLogin?mode=scanCode&driverId=" + driverId });
-            //     that.submitDisabled = false;
-            //   }
-            // });
           } else {
             that.scanCodeCommit = false;
             that.isScanCode = true;
@@ -1045,7 +1037,7 @@ Page({
     let that = this;
     app.getWeChatUserInfo().then(userInfo => {
       loading.hide();
-      console.log("userInfo", userInfo);
+      // console.log("userInfo", userInfo);
       that.initData();
       if (app.globalData.userInfo && app.globalData.userInfo.token) {
         that.getEdjUserInfo();

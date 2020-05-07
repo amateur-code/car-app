@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/authorizeLogin/authorizeLogin",
     "pages/login/login",
     "pages/commitConfirm/commitConfirm",
     "pages/certification/certification",

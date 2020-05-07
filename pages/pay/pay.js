@@ -1,6 +1,8 @@
 import { loading, queryError } from '../../common/util';
 import { mDriverPosition, mOrderPay, mPayWx, mCouponList, mPayNotify, mPostFormId } from '../../common/actions';
 let app = getApp();
+import drawQrcode from '../../common/weapp.qrcode';
+
 Page({
 
   data: {
@@ -12,7 +14,8 @@ Page({
     showcancelFee: false,
     currentCity: '北京市',
     payType: '',//判断是否是取消单
-    detailToIndex: app.globalData.detailToIndex
+    detailToIndex: app.globalData.detailToIndex,
+    showPay: false
   },
   pollingCount: 1,
   timer: null,
@@ -158,7 +161,7 @@ Page({
           "order.show": true
         });
         that.checkoutCoupon().then(json => {
-          console.log(json)
+          // console.log(json)
           if (json.code * 1 != 0){
             if (json.code * 1 == 400) {
               that.setData({
@@ -330,41 +333,14 @@ Page({
         }
         return;
       } else {
-        that.sendFormId(json.data.package.replace('prepay_id=',''))
-        wx.requestPayment({
-          'timeStamp': json.data.timeStamp,
-          'nonceStr': json.data.nonceStr,
-          'package': json.data.package,
-          'signType': json.data.signType,
-          'paySign': json.data.paySign,
-          'success': function (res) {
-            wx.showToast({
-              title: '支付成功',
-              icon: 'success',
-              duration: 1000,
-              success: function () {
-                // console.log(that.data.payType)
-                if (that.data.payType == 'cancelFee') {
-                  wx.reLaunch({
-                    url: '../index/index',
-                  });
-                } else {
-                  that.isLimit = true;
-                  clearTimeout(that.timer);
-                  let onlineParam = that.isFromSelectDriver() ? "" :"&onlinePay=true";
-                  wx.navigateTo({ url: '../orderDetail/orderDetail?from=pay&orderId=' + app.globalData.order.orderId + onlineParam });
-                }
-              }
-            })
-          },
-          'fail': function (res) {
-            wx.showToast({
-              title: '支付失败',
-              image: '../../res/fail.png',
-              duration: 1000
-            });
-          }
-        });
+        that.setData({showPay:true})
+        drawQrcode({
+          width: app.globalData.windowWidth / 750 * 100,
+          height: app.globalData.windowWidth / 750 * 100,
+          canvasId: 'myQrcode',
+          text: decodeURIComponent(json.data)
+        })
+        console.log(json)
       }
     });
   },

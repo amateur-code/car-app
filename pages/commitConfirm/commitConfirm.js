@@ -333,9 +333,7 @@ Page({
           wx.alert({
             content: "您的账号信息已失效，请重新登录",
             success: function (json) {
-              wx.navigateTo({
-                url: "../authorizeLogin/authorizeLogin"
-              });
+              wx.navigateTo({url: "../login/login"});
             }
           });
           return reject();

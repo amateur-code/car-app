@@ -318,7 +318,7 @@ Page({
       title: '您未登录，请先登录',
       showCancel: false,
       complete: function () {
-        wx.redirectTo({ url: '../authorizeLogin/authorizeLogin?mode=scanCode&driverId=' + driverId });
+        wx.redirectTo({ url: '../login/login?mode=scanCode&driverId=' + driverId });
       }
     });
   },

@@ -1,3 +1,4 @@
+
 <view class="pay-container" wx:if="{{order.show && !showcancelFee}}">
 	<view class="left">
 		<view class="header">
@@ -118,4 +119,12 @@
 		</navigator>
 	</view>
 </view>
-
+<view class="qrcode-container-cover" wx:if="{{showPay}}">
+	<view class="qrcode-container">
+		<canvas style="width: 100rpx; height: 100rpx;" canvas-id="myQrcode"></canvas>
+		<view class="canvas-right">
+			<view class="cast">代付款<text>¥{{order.cast}}</text></view>
+			<view>打开微信扫一扫支付</view>
+		</view>
+	</view>
+</view>
