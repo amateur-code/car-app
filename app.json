@@ -34,7 +34,8 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "e代驾",
-    "backgroundColor": "#eee"
+    "backgroundColor": "#eee",
+    "mossPkgName": "60208"
   },
   "debug": false,
   "permission": {

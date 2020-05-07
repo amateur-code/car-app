@@ -102,16 +102,7 @@ App({
     configInfo: configInfo,
     // couponId:'',
     isClickFemale: false,
-    // userInfo: null,
-    userInfo:{
-      "openId":"ohRHq0LdkB5JCd3E5TeGClny2Y84",
-      "unionId":"oPlwpuJwRevYMwlnwhEgBWXMAeck",
-      "phone":"17701035267",
-      "token":"f650025059594b97bd933abbb94a0a29",
-      "name":"",
-      "gender":"1",
-      "avatarUrl":"https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqzh2c5OGpQSCWURl6Pjc6QTAEQqHnprvzs9XrlxFvVJoRjwxKUWHGTicKmGdQ4F1Bk36PLla24dzA/132"
-    },
+    userInfo: null,
     cityId: '',
     currentCityId: '',
     user: null,
@@ -143,18 +134,27 @@ App({
 
     
     // test
-    storeEndAddress: {
-      latitude: 39.86511540630113,
-      longitude: 116.37902388245611,
-      name: "北京南站",
-      region: "北京市",
-    },
-    storeStartAddress: {
-      latitude: 39.9219,
-      longitude: 116.44355,
-      name: "北京市朝阳区人民政府",
-      region: "北京市",
-    }
+    // userInfo:{
+    //   "openId":"ohRHq0LdkB5JCd3E5TeGClny2Y84",
+    //   "unionId":"oPlwpuJwRevYMwlnwhEgBWXMAeck",
+    //   "phone":"17701035267",
+    //   "token":"f650025059594b97bd933abbb94a0a29",
+    //   "name":"",
+    //   "gender":"1",
+    //   "avatarUrl":"https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqzh2c5OGpQSCWURl6Pjc6QTAEQqHnprvzs9XrlxFvVJoRjwxKUWHGTicKmGdQ4F1Bk36PLla24dzA/132"
+    // },
+    // storeEndAddress: {
+    //   latitude: 39.86511540630113,
+    //   longitude: 116.37902388245611,
+    //   name: "北京南站",
+    //   region: "北京市",
+    // },
+    // storeStartAddress: {
+    //   latitude: 39.9219,
+    //   longitude: 116.44355,
+    //   name: "北京市朝阳区人民政府",
+    //   region: "北京市",
+    // }
 
   }
 })
