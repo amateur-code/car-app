@@ -15,7 +15,6 @@ App({
   */
 
   onLaunch: function () { // 同步操作
-    
     this.getSystemInfo();
     polyInit();
     var author = wx.getStorageSync("author");
@@ -85,16 +84,12 @@ App({
     }
   },
   getSystemInfo: function () {
-    var _this = this;
-    wx.getSystemInfo({
-      //获取设备信息
-      success: (res) => {
-        console.log("小程序基础库版本为：" + res.SDKVersion)
-        _this.globalData.systemInfo = res.platform;
-        _this.globalData.windowHeight = res.windowHeight;
-        _this.globalData.windowWidth = res.windowWidth;
-      }
-    })
+    const res =  wx.getSystemInfoSync()
+    console.log("小程序基础库版本为：" + res.SDKVersion)
+    this.globalData.systemInfo = res.platform;
+    this.globalData.windowHeight = res.windowHeight;
+    this.globalData.windowWidth = res.windowWidth;
+    this.globalData.isCar = res.device == 'wecar'
   },
 
   globalData: {
@@ -110,6 +105,7 @@ App({
     systemInfo: 'devTools',
     windowHeight: 0,
     windowWidth: 0,
+    isCar: false,
     order: {},
     isVirtual: false,
     virtualKey: '',

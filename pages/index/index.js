@@ -264,7 +264,7 @@ Page({
           }
           if (!app.globalData.userInfo.token || !app.globalData.userInfo.phone) {
             loading.hide();
-            wx.navigateTo({ url: "../authorizeLogin/authorizeLogin?mode=scanCode&driverId=" + driverId });
+            this.gotoLogin()
             // wx.showModal({
             //   title: "您未登录，请先登录",
             //   showCancel: false,
@@ -392,9 +392,7 @@ Page({
                 success: function (json) {
                   // console.log(json)
                   if(json.confirm){
-                    wx.navigateTo({
-                      url: "../authorizeLogin/authorizeLogin"
-                    });
+                    this.gotoLogin()
                   }
                 }
               });
@@ -1047,7 +1045,7 @@ Page({
     let that = this;
     app.getWeChatUserInfo().then(userInfo => {
       loading.hide();
-      // console.log("userInfo", userInfo);
+      console.log("userInfo", userInfo);
       that.initData();
       if (app.globalData.userInfo && app.globalData.userInfo.token) {
         that.getEdjUserInfo();
@@ -1364,9 +1362,7 @@ Page({
             content: "您的账号信息已失效，请重新登录",
             success: function (json) {
               if(json.confirm){
-                wx.navigateTo({
-                  url: "../authorizeLogin/authorizeLogin"
-                });
+                this.gotoLogin()
               }
             }
           });
@@ -1450,7 +1446,7 @@ Page({
   },
   // 跳转登录页面
   gotoLogin: function() {
-    wx.navigateTo({ url: "../authorizeLogin/authorizeLogin" });
+    wx.navigateTo({ url: "../login/login" });
   },
   getQueryString: function(name, arg) {
     let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");

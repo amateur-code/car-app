@@ -373,8 +373,10 @@ export const mConfigInit = params => {
  * 获取unionId
  */
 export const mThirdUserinfo = params => {
+  let app = getApp();
+  let apiUrl = app.globalData.isCar ? 'sso/third/car/get/userinfo' : 'sso/third/get/userinfo/v2';
   Object.assign(params, {
-    apiUrl: 'sso/third/get/userinfo/v2'
+    apiUrl: apiUrl
   });
   return getOpen(params);
 }
@@ -383,8 +385,10 @@ export const mThirdUserinfo = params => {
  * 获取gettoken
  */
 export const mGetToken = params => {
+  let app = getApp();
+  let apiUrl = app.globalData.isCar ? 'sso/third/car/get/token' : 'sso/third/get/token/v2';
   Object.assign(params, {
-    apiUrl: 'sso/third/get/token/v2'
+    apiUrl: apiUrl
   });
   return getOpen(params);
 }
@@ -393,8 +397,10 @@ export const mGetToken = params => {
  * 绑定token接口
  */
 export const mThirdBind = params => {
+  let app = getApp();
+  let apiUrl = app.globalData.isCar ? 'sso/third/car/bind' : 'sso/third/bind/v2';
   Object.assign(params, {
-    apiUrl: 'sso/third/bind/v2',
+    apiUrl: apiUrl
   });
   return getOpen(params);
 }
