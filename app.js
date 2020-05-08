@@ -89,7 +89,7 @@ App({
     this.globalData.systemInfo = res.platform;
     this.globalData.windowHeight = res.windowHeight;
     this.globalData.windowWidth = res.windowWidth;
-    this.globalData.isCar = res.device == 'wecar'
+    this.globalData.isCar = res.device == 'wecar'
   },
 
   globalData: {

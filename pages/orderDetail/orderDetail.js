@@ -1,7 +1,6 @@
 import { loading, queryError } from '../../common/util';
 import { mOrderDetail, mDriverTag, mAddComment } from '../../common/actions';
 let app = getApp();
-import { redPacket } from "../../common/redPacket.js";
 
 Page({
   clickOff: true,
@@ -43,8 +42,6 @@ Page({
       text: '请填写您对司机服务的意见'
     },
     showFee: true,
-    showRedPacket: false,
-    redPacketData: null,
     orderChannel: "",
     onlinePayTag: false
   },
@@ -70,7 +67,6 @@ Page({
         that.setData({
           onlinePayTag: false
         })
-        that.getRedPacket("onlinePaySuccess");
       }
 
       if (json.code != '0') {
@@ -257,7 +253,6 @@ Page({
         success: function () {
           that.getOrderDetail(that.data.order.orderId);
           if (!that.isFromSelectDriver()) {
-            that.getRedPacket('evaluateSuccess');
           } else{
             that.jumpToIndex();
           }
@@ -275,27 +270,6 @@ Page({
       that.setData({ 'flag.show': false });
       clearTimeout(timer);
     }, 800)
-  },
-  //新天降红包
-  getRedPacket(type) {
-    let that = this;
-    redPacket.getData({
-      triggerAction: type,
-      secondTriggerChannel: 'directOpen',
-    }).then((info) => {
-      that.setData({
-        showRedPacket: info ? true : false,
-        redPacketData: info ? info : null
-      })
-    })
-  },
-  onCloseRedPacket(type) {
-    this.setData({
-      showRedPacket: false
-    })
-    if (type.detail == 'evaluateSuccess') {
-      this.jumpToIndex();
-    }
   },
   isFromSelectDriver: function () {
     if (this.data.orderChannel && this.data.orderChannel == '01001'){

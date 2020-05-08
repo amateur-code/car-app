@@ -21,7 +21,6 @@ import {
   mPostFormId
 } from "../../common/actions";
 import heightController from "../../common/mapHeightController";
-import { redPacket } from "../../common/redPacket.js";
 // 获取应用实例
 var app = getApp();
 Page({
@@ -74,8 +73,6 @@ Page({
     isClickFemale: false,
     showDynamic: false,
     showMainBtn: false, //强输目的地控制
-    showRedPacket: false,
-    redPacketData: null
   },
   gender: "1",
   isVerified: "0", // 0 未认证 1 已认证
@@ -1057,7 +1054,6 @@ Page({
               that.getRecommendAddress();
             });
             that.getWelcome();
-            that.getRedPacket();
             // 判断是否是首次实名认证
             if (app.globalData.isFirstVerify) {
               that.certificationToast();
@@ -1283,27 +1279,7 @@ Page({
       });
     })
   },
-  //新天降红包
-  getRedPacket() {
-    let that = this;
-    //qRCode扫码打开  directOpen直接打开
-    redPacket.getData({
-      triggerAction: 'openIndex',
-      secondTriggerChannel: app.globalData.qrCode ? 'qRCode' : 'directOpen',
-      qRCodeUrl: app.globalData.qrCode ? app.globalData.qrCode : ''
-    }).then((info) => {
-      app.globalData.qrCode = null;
-      that.setData({
-        showRedPacket: info ? true : false,
-        redPacketData: info ? info : null
-      })
-    })
-  },
-  onCloseRedPacket() {
-    this.setData({
-      showRedPacket:false
-    })
-  },
+  
   // 重新获取当前的位置
   refreshLoction: function() {
     let that = this;

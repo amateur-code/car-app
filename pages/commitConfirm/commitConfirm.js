@@ -10,7 +10,6 @@ import {
   mFeedback,
   mPostFormId
 } from '../../common/actions';
-import { redPacket } from "../../common/redPacket.js";
 Page({
   data: {
     map: {
@@ -24,8 +23,6 @@ Page({
     feeMax: 0,
     dynamic: false,
     timer: null,
-    showRedPacket: false,
-    redPacketData: null
   },
   calloutText: ' 正在获取您的位置... ',
   source: 5,
@@ -58,26 +55,6 @@ Page({
       this.getCostEstimate();
     }, 5 * 60 * 1000);
 
-    this.getRedPacket();
-  },
-
-  getRedPacket: function () {
-    let that = this;
-    redPacket.getData({
-      triggerAction: "predict",
-      secondTriggerChannel: 'directOpen',
-    }).then((info) => {
-      that.setData({
-        showRedPacket: info ? true : false,
-        redPacketData: info ? info : null
-      })
-    })
-  },
-
-  onCloseRedPacket: function() {
-    this.setData({
-      showRedPacket: false
-    })
   },
 
   onHide: function () {
