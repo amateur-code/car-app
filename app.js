@@ -130,15 +130,15 @@ App({
 
     
     // test
-    // userInfo:{
-    //   "openId":"ohRHq0LdkB5JCd3E5TeGClny2Y84",
-    //   "unionId":"oPlwpuJwRevYMwlnwhEgBWXMAeck",
-    //   "phone":"17701035267",
-    //   "token":"f650025059594b97bd933abbb94a0a29",
-    //   "name":"",
-    //   "gender":"1",
-    //   "avatarUrl":"https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqzh2c5OGpQSCWURl6Pjc6QTAEQqHnprvzs9XrlxFvVJoRjwxKUWHGTicKmGdQ4F1Bk36PLla24dzA/132"
-    // },
+    userInfo:{
+      "openId":"ohRHq0LdkB5JCd3E5TeGClny2Y84",
+      "unionId":"oPlwpuJwRevYMwlnwhEgBWXMAeck",
+      "phone":"17701035267",
+      "token":"bf4a0fa845f54f4eab5d01579abf2830",
+      "name":"",
+      "gender":"1",
+      "avatarUrl":"https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqzh2c5OGpQSCWURl6Pjc6QTAEQqHnprvzs9XrlxFvVJoRjwxKUWHGTicKmGdQ4F1Bk36PLla24dzA/132"
+    },
     // storeEndAddress: {
     //   latitude: 39.86511540630113,
     //   longitude: 116.37902388245611,

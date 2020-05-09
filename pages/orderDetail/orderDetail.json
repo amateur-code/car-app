@@ -1,6 +1,5 @@
 {
   "navigationBarTitleText": "订单详情",
   "usingComponents": {
-    "red-packet": "../../components/red-packet/index"
   }
 }
