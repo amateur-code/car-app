@@ -1,6 +1,6 @@
 // pages/couponList/couponList.js
 let app = getApp();
-import { loading, queryError, wxPromisify } from '../../common/util';
+import { loading, queryError, wxPromisify, autoAdpatStyle } from '../../common/util';
 import { mCouponList } from '../../common/actions';
 
 Page({
@@ -14,13 +14,15 @@ Page({
     orderNo: 0,
     pageSize: 20,
     showEmpty: false,
-    bType: 'all'
+    bType: 'all',
+    skin: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    autoAdpatStyle(this)
     let that = this, title;
     if(options.from == 'index'){
       title = '可用优惠券';

@@ -1,4 +1,4 @@
-<view class="list_container">
+<view class="list_container {{skin}}">
   <view class="empty" wx:if="{{showEmpty}}">
     <image class="empty_img" src="../../res/empty.png"></image>
     <view class="empty_info">暂无代驾券</view>

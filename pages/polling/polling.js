@@ -2,7 +2,7 @@
 import { GPS } from '../../common/GPS';
 import dataTreating from '../../common/base64';
 import configInfo from "../../common/config";
-import { loading, encryptPhone, queryError } from '../../common/util';
+import { loading, encryptPhone, queryError, autoAdpatStyle } from '../../common/util';
 import {
   mGpsLocation,
   mMyDrivers,
@@ -51,6 +51,7 @@ Page({
     tipItem: '',
     showPollingConfigTip: false,
     showPollingConfigTitle: false,
+    skin: ''
   },
   mapHeight: 440,
   mode: '',
@@ -340,6 +341,7 @@ Page({
       this.driverInfo(query.q);
       return;
     }
+    autoAdpatStyle(this)
     wx.removeStorageSync("from_driver");
     if (query.bookingId) {
       app.globalData.bookingTime = new Date(parseInt(query.orderTime + '000')).Format();

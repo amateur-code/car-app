@@ -1,39 +1,46 @@
 <!-- index.wxml -->
-<view class="index-page">
-	
-	<view class="address-wrapper">
-    <image class="user" src="../../res/user.png"  bindtap="goToPersion" />
-		<view class="address-msg">
-      <view class="start" data-location="start" bindtap="skipAddressList">
-        <image src="../../res/icon_start.png" />
-        <text>{{loc.name}}</text>
+<view class="page-container {{skin}}">
+	<view class="left-container">
+      <image class="user" src="../../res/user.png"  bindtap="goToPersion" />
+      <view class="address-msg">
+        <view class="start" data-location="start" bindtap="skipAddressList">
+          <image src="../../res/icon_start.png" />
+          <text class="text-black">{{loc.name}}</text>
+        </view>
+        <view class="end" data-location="end" bindtap="skipAddressList">
+          <image src="../../res/icon_terminus.png" />
+          <text class="text-gray">请输入目的地</text>
+        </view>
       </view>
-      <view class="end" data-location="end" bindtap="skipAddressList">
-        <image src="../../res/icon_terminus.png" />
-        <text>请输入目的地</text>
+      <view class="dynamic" wx:if="{{showDynamic}}">
+          {{dynamicInfo.dynamicRate ? '需求过旺临时调价' : '需求过旺每单加价'}}
+          <text style="color:#ff6600;">{{dynamicInfo.dynamicRate?dynamicInfo.dynamicRate:dynamicInfo.dynamicFee}}</text>
+          {{dynamicInfo.dynamicRate ? '倍':'元'}}
       </view>
-    </view>
-    <view class="dynamic" wx:if="{{showDynamic}}">
-        {{dynamicInfo.dynamicRate ? '需求过旺临时调价' : '需求过旺每单加价'}}
-        <text style="color:#ff6600;">{{dynamicInfo.dynamicRate?dynamicInfo.dynamicRate:dynamicInfo.dynamicFee}}</text>
-        {{dynamicInfo.dynamicRate ? '倍':'元'}}
-    </view>
   </view>
-  <map
-	 wx:if="{{showMap}}"
-	 id="map"
-	 scale="{{map.scale}}"
-	 show-location="{{true}}"
-	 latitude="{{map.latitude}}"
-	 longitude="{{map.longitude}}"
-	 markers="{{map.markers}}"
-	 controls="{{map.controls}}"
-	 bindcontroltap="controltap"
-	 include-points="{{map.includePoints}}"
-	 bindregionchange="regionchange"
-	 circles="{{map.circles}}"
-  />
-  <cover-image bindtap="returnCenter" class="center_btn" src="../../res/location.png" />
+  <view class="right-container">
+    <map
+      id="map"
+      wx:if="{{showMap}}"
+      scale="{{map.scale}}"
+      show-location="{{true}}"
+      latitude="{{map.latitude}}"
+      longitude="{{map.longitude}}"
+      markers="{{map.markers}}"
+      bindcontroltap="controltap"
+      bindregionchange="regionchange"
+      circles="{{map.circles}}"
+    ></map>
+    <cover-image bindtap="returnCenter" class="center_btn" src="../../res/location.png" />
+    <cover-image class="center_img" src="../../res/center-location.png" />
+    <cover-view class="callout2" wx:if="{{showCallout}}">
+      <cover-image class="callout2-image" src="../../res/map_pop.png"></cover-image>
+      <cover-view class="callout2-item-container">
+        <cover-view class="callout-item1" wx:if="{{calloutTxt}}">{{calloutTxt}} </cover-view>
+        <cover-view class="callout-item2" style="">{{calloutTxt2}}</cover-view>
+      </cover-view>
+    </cover-view>
+  </view>
 </view>
 
 

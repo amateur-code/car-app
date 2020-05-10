@@ -1,18 +1,19 @@
 import { mOrderDetail } from '../../common/actions';
-import { loading, queryError } from '../../common/util';
+import { loading, queryError, autoAdpatStyle } from '../../common/util';
 let app = getApp();
 Page({
   data: { 
     feeDetail: [],
     totalFee: '',
-    detailgebied:''
+    detailgebied:'',
+    skin:''
   },
 
   onLoad: function (options) {
     // console.log(app.globalData.nowLoc)
     loading.show();
     let that = this;
-
+    autoAdpatStyle(that)
     mOrderDetail({
       token: app.globalData.userInfo.token,
       order_id: options.orderId

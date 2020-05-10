@@ -106,7 +106,7 @@
 					"id": 8,
 					"name": "订单详情",
 					"pathName": "pages/orderDetail/orderDetail",
-					"query": "orderId=973496856&fromHistory=true&status=1",
+					"query": "orderId=973497731&fromHistory=true&status=1",
 					"scene": null
 				},
 				{

@@ -14,7 +14,7 @@ Page({
      * udid  用户标志
      */
     this.setData({
-      url: config.h5Url + '/responsibility-cancel-order/cancel-reason.html?token=' + app.globalData.userInfo.token + '&orderStateCode=' + options.orderStateCode + '&isVip=isVip' + '&orderId=' + app.globalData.order.orderId + '&bookingId=' + app.globalData.bookingId + '&city=' + encodeURI(app.globalData.cityPriceAddress.region)
+      url: config.h5Url + '/responsibility-cancel-order/cancel-reason.html?token=' + app.globalData.userInfo.token + '&orderStateCode=' + options.orderStateCode + '&isVip=isVip' + '&orderId=' + app.globalData.order.orderId + '&bookingId=' + app.globalData.bookingId + '&city=' + encodeURI(app.globalData.cityPriceAddress.region) + '&skin=' + app.globalData.skin + '&from=' + config.from
     })
   },
   onShareAppMessage: app.shareConfig

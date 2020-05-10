@@ -1,30 +1,26 @@
-.page-wrap{
+.left-container{
   display: flex;
-  background: #FCFDFF;
-}
-.left{
+  flex-direction: column;
+  padding: 0;
   width: 300rpx;
-  background: rgba(255,255,255,0.80);
-  box-shadow: 0 0 20px 0 rgba(152,152,152,0.28);
-}
-.right{
-  margin-left: 20px;
-  flex:1;
 }
 
+.page-container.dark .right-container{
+  background-color: #000;
+}
 /* --------------------费用--------------------- */
 .cost_detail{
+  flex:1;
   text-align: center;
-  padding-bottom: 20rpx;
 }
 .total_fee {
   font-size: 14rpx;
 }
 .total_fee text{
   font-size: 30rpx;
-  color: #19191A;
 }
 .dis_time{
+  padding-top: 10rpx;
   font-size: 14rpx;
 }
 .look_feeDetail{
@@ -43,25 +39,20 @@
 
 .close{
   padding: 20rpx 0;
-}
-.close .close_title{
   color: #646566;
   font-size: 14rpx;
 }
 .close .close_title2{
-  color: #646566;
-  font-size: 14rpx;
   margin-top: 10rpx;
 }
 
 /* --------------------评价--------------------- */
 .comment_wrap{
-  padding: 20rpx 0 0;
+  padding: 20rpx 0;
   border-top: 1px solid #E8E9EB;
 }
 .comment_wrap .title{
   font-size: 15.6rpx;
-  color: #19191A;
   text-align: center;
 }
 
@@ -77,6 +68,7 @@
 }
 
 .other_comment {
+  padding: 0rpx 0 30rpx;
   width: 350rpx;
   margin: 0 auto;
 }
@@ -125,10 +117,9 @@
 }
 
 .btn-submit{
+  position: relative;
+  bottom: 0;
   margin-top: 20rpx;
-  background: #3b414d;
-  border-color: #3b414d;
-  border-radius: 4rpx;
 }
 
 /* ---------------- order-detail ------------------- */
@@ -153,7 +144,6 @@
   display: block;
   line-height: 29rpx;
   font-size: 14rpx;
-  color: #19191A;
 }
 .driver_info .order_year{
   line-height: 20rpx;
@@ -166,9 +156,9 @@
   align-items: center;
   line-height: 51rpx;
   font-size: 14rpx;
-  color: #19191A;
   border-bottom:1px solid #E8E9EB;
 }
+
 .order_time image{
   margin-right: 10rpx;
   width: 16rpx;
@@ -184,7 +174,6 @@
   text-overflow: ellipsis;
   font-size: 15.6rpx;
   line-height: 15.6rpx;
-  color: #19191A;
 }
 .end{
   margin-top: 10rpx;
@@ -194,9 +183,6 @@
   width:  15.6rpx;
   height:  15.6rpx;
 }
-
-
-
 
 .modal-content{
   width: 320rpx;

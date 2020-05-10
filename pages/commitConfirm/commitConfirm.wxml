@@ -1,10 +1,10 @@
-<view class="commit-confirm">
-	<view class="address-wrapper">
-		<view class="address-msg">
+<view class="page-container {{skin}}">
+	<view class="left-container">
+		<view class="inner-container">
 			<block wx:if="{{costestimateData.show}}">
 				<view class="costestimate" bindtap="costestimatePage">
-					<view class="costestimateFee">
-            <text>约</text>
+					<view class="costestimateFee text-black">
+            			<text>约</text>
 						<text class="num">{{costestimateData.cost}}</text>
 						<text>元</text>
 						<image src="/res/arrow_right_dark.png" />
@@ -20,7 +20,7 @@
 				</view>
 			</block>
 			<block wx:if="{{costestimateData.hint}}">
-				<view class="costestimate_hint">
+				<view class="costestimate_hint text-black">
 					跨城市订单暂时无法预估费用
 					<view class="dynamic" wx:if="{{dynamic}}">
 						{{dynamicRate ? '需求过旺临时调价' : '需求过旺每单加价'}}
@@ -29,23 +29,22 @@
 					</view>
 				</view>
 			</block>
-			<form bindsubmit="commitOrder" report-submit="true">
-				<button class="commitBtn" type="default" formType="submit">
-					呼叫司机
-				</button>
-			</form>
+			<button class="btn btn-commit" bindtap="commitOrder">
+				呼叫司机
+			</button>
 		</view>
 	</view>
-	<map
-	 id="confirmMap"
-	 scale="{{11}}"
-	 show-location="false"
-	 latitude="{{map.latitude ? map.latitude : 39.8468989874}}"
-	 longitude="{{map.longitude ? map.longitude : 116.1544990540}}"
-	 markers="{{map.markers}}"
-  >
-  </map>
-  <cover-image bindtap="returnCenter" class="center_btn" src="../../res/location.png" />
+	<view class="right-container">
+		<map
+			id="confirmMap"
+			scale="{{11}}"
+			show-location="false"
+			latitude="{{map.latitude ? map.latitude : 39.8468989874}}"
+			longitude="{{map.longitude ? map.longitude : 116.1544990540}}"
+			markers="{{map.markers}}"
+		></map>
+		<cover-image bindtap="returnCenter" class="center_btn" src="../../res/location.png" />
+	</view>
 </view>
 
 

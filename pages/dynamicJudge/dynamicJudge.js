@@ -15,6 +15,7 @@ Page({
       app_ver: config.appVer,
       from_type: config.fromType,
       ver: config.ver,
+      skin: app.globalData.skin
     });
     params.MD5KEY = config.md5key;
     params.urlParams = urlParams;

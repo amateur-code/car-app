@@ -282,6 +282,25 @@ let eStorage = {
   }
 }
 
+let autoAdpatStyle = (that)=>{
+  let app =  getApp();
+  console.log(app)
+  if(app.globalData.isCar){
+    wx.getColorStyle({  success (res) {    
+      that.setData({ skin: res.colorStyle })
+      app.globalData.skin = res.colorStyle
+    }})
+    wx.onColorStyleChange(function (res) {  
+      that.setData({ skin: res.colorStyle })
+      app.globalData.skin = res.colorStyle
+    })
+  }else{
+    that.setData({ skin: 'dark' })
+    app.globalData.skin = 'dark'
+  }
+}
+
+
 export {
   eStorage,
   queryError,  // 错误返回
@@ -289,4 +308,5 @@ export {
   loading,  //loading
   wxPromisify, //同步执行
   judgeTime, //判断某个时间是否在一段时间内
+  autoAdpatStyle
 }

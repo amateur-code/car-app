@@ -1,4 +1,4 @@
-<view class="list_container">
+<view class="list_container {{skin}}">
 	<view class="empty" wx:if="{{showEmpty}}">
 		<image class="empty_img" src="../../res/empty.png" />
 		<view class="empty_info">暂无订单，快去叫代驾吧</view>
@@ -9,8 +9,7 @@
 	 data-status="{{item.status}}"
 	 data-orderid="{{item.id}}"
 	 wx:key="item"
-	 bindtap="goDetail"
-	>
+	 bindtap="goDetail">
 		<view class="status_btn" wx:if="{{item.status == 2}}">
 			已关闭
 			<image src="../../res/arrow_right_dark.png" />

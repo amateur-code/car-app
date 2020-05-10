@@ -10,7 +10,7 @@ Page({
       tokenLink = token ? token : '';
     this.setData({
       //url: config.h5Url + 'app/price.html?city=' + encodeURI(options.city)
-      url: config.h5Url + 'app/price.html?city=' + encodeURI(options.city) + "&token=" + tokenLink
+      url: config.h5Url + 'app/price.html?city=' + encodeURI(options.city) + "&token=" + tokenLink + '&skin=' + app.globalData.skin + '&from=' + config.from
     })
   },
   onShareAppMessage: app.shareConfig

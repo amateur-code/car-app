@@ -1,27 +1,15 @@
-<view class="person-center">
-	<view class="person_list">
-		<navigator class="item" url='../orderHistory/orderHistory'>
-			订单
-		</navigator>
-
-		<navigator class="item" url='../couponList/couponList?bType=all'>
-			代驾券
-		</navigator>
-
-    <navigator class="item" url='../price/price?city={{city}}'>
-      计费规则
-			
-		</navigator>
-    <navigator class="item" url='../webview/webview?path=driverbook/protocol.html'>
-      法律条款
-		
-		</navigator>
+<view class="page-container {{skin}}">
+	<view class="left-container text-black">
+		<navigator class="item" url='../orderHistory/orderHistory'>订单</navigator>
+		<navigator class="item" url='../couponList/couponList?bType=all'>代驾券</navigator>
+		<navigator class="item" url='../price/price?city={{city}}'>计费规则</navigator>
+    	<navigator class="item" url='../webview/webview?path=driverbook/protocol.html'>法律条款</navigator>
 		<view class="item" bindtap="makeACall">
 			<text class="txt">客服热线</text>
 			<text class="service_phone">{{servicePhone}}</text>
 		</view>
 	</view>
-	<view class="user-info">
+	<view class="right-container">
 		<view class="wechat_info" wx:if="{{user}}">
 			<button
 			 class="getUser"
@@ -31,9 +19,9 @@
 			>
 				<image class="avatarUrl" src="{{user.avatarUrl}}" />
 			</button>
-			<view class="phone">{{user.phone}}</view>
+			<view class="phone text-black">{{user.phone}}</view>
 		</view>
-		<navigator class="exit_btn" url="../login/login">切换账号</navigator>
+		<navigator class="btn gray exit_btn" url="../login/login">切换账号</navigator>
 	</view>
 </view>
 

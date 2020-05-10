@@ -1,6 +1,6 @@
 var app = getApp();
 import { GPS } from "../../common/GPS";
-import { loading, queryError, eStorage } from "../../common/util";
+import { loading, queryError, eStorage, autoAdpatStyle } from "../../common/util";
 import {
   mCostEstimate,
   mMyDrivers,
@@ -13,7 +13,6 @@ import {
 Page({
   data: {
     map: {
-      height: '100%',
       includePoints: [],
       markers: [],
     },
@@ -23,6 +22,7 @@ Page({
     feeMax: 0,
     dynamic: false,
     timer: null,
+    skin: ''
   },
   calloutText: ' 正在获取您的位置... ',
   source: 5,
@@ -32,6 +32,7 @@ Page({
   addressHeight2: 370,// 有预估价的高度
   onLoad() {
     this.setMapConfig(this.addressHeight1);
+    autoAdpatStyle(this)
     this.mapCtx = wx.createMapContext("confirmMap");
     this.setData({
       loc: app.globalData.storeStartAddress,
@@ -397,6 +398,7 @@ Page({
         });
         callback && callback();
       } else if (json.code === "0") {
+        // json.deductMoney = 10
         that.setData({
           "costestimateData.hint": false,
           "costestimateData.show": true,
@@ -503,6 +505,7 @@ Page({
         })
         //动态调价
         //动态调价
+        // data.dynamicRate = 10
         if (data.dynamicFee * 1 == 0 || data.dynamicRate * 1 <= 1) {
           this.setData({
             dynamic: false

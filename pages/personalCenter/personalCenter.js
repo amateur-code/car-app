@@ -1,11 +1,12 @@
-import { loading, encryptPhone, queryError} from '../../common/util';
+import { loading, encryptPhone, queryError, autoAdpatStyle} from '../../common/util';
 let app = getApp();
 
 Page({
   data: {
     user: {},
     city: '北京',
-    servicePhone: '4008-10-3939'
+    servicePhone: '4008-10-3939',
+    skin:''
   },
   initData: function(){
     // console.log(app.globalData.cityPriceAddress)
@@ -28,6 +29,7 @@ Page({
     this.setUserInfo(e.detail.userInfo);
   },
   onLoad: function (options) {
+    autoAdpatStyle(this)
     this.initData();
   },
   setUserInfo(userInfo){

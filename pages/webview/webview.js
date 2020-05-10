@@ -9,7 +9,7 @@ Page({
   onLoad: function (options) {// 带中文需要encodeURI编码
     if (options.path == 'user-app-pack/coupon/cancel-rules.html'){
       this.setData({
-        url: config.h5Url + options.path + '?city=' + encodeURI(app.globalData.cityPriceAddress.region) + '&token=' + app.globalData.userInfo.token
+        url: config.h5Url + options.path + '?city=' + encodeURI(app.globalData.cityPriceAddress.region) + '&token=' + app.globalData.userInfo.token + '&skin=' + app.globalData.skin + '&from=' + config.from
       })
     } else if (options.path == 'user-app-client/surprised-gift/index.html'){
       let data = JSON.parse(options.ecrmRedpacket)

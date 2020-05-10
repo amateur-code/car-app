@@ -1,3 +1,6 @@
+.dark{
+  background-color: #000;
+}
 .header {
   font-size: 12rpx;
   width: 100%;
@@ -5,6 +8,10 @@
   color: #19191a;
   margin-bottom: 28rpx;
 }
+.dark .header{
+  color: #fff;
+}
+
 .listNull {
   font-size: 12rpx;
   text-align: center;
@@ -14,7 +21,11 @@
 .list{
   display: flex;
   flex-wrap: wrap;
+  color: #19191a;
   padding:  0 15rpx;
+}
+.dark .list{
+  color: #fff;
 }
 .coupon-list{
   display: flex;
@@ -57,7 +68,6 @@
 }
 .fee {
   font-size: 12rpx;
-  color: #19191a;
   width: 100rpx;
   text-align: center;
 }
@@ -82,11 +92,9 @@
 .title {
   font-size: 13rpx;
   line-height: 16rpx;
-  color: #19191a;
 }
 .over-time {
   font-size: 11rpx;
-  color: #19191a;
 }
 
 .tip {

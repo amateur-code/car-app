@@ -1,4 +1,4 @@
-import { loading, queryError } from '../../common/util';
+import { loading, queryError, autoAdpatStyle } from '../../common/util';
 import { mOrderDetail, mDriverTag, mAddComment } from '../../common/actions';
 let app = getApp();
 
@@ -94,9 +94,9 @@ Page({
       that.setData({
         'order.orderId': data.orderId,
         'order.driverImg': data.driver.pictureSmall,
-        'order.driverName': data.driver.name,
-        'order.driverId': data.driver.driverId,
-        'order.driverYear': data.driver.year,
+        'order.driverName': data.driver.name || '',
+        'order.driverId': data.driver.name ? data.driver.driverId : '',
+        'order.driverYear': data.driver.year || '',
         'order.time': time_arr,
         'order.locationStart': data.locationStart,
         'order.locationEnd': data.locationEnd,
@@ -137,7 +137,6 @@ Page({
     if (!that.isCommentClick || !e.target.id) return;
     that.changeStar(e.target.id, function () {
       that.setData({ showComment: true });
-      that.pageScrollToBottom();
       if (that.allRemarks) {
         that.allRemarks[e.target.id].map(function (item, index) {
           that.allRemarks[e.target.id][index]['active'] = '';
@@ -196,15 +195,7 @@ Page({
     })
     return t_codeList;
   },
-  // 获取容器高度，使页面滚动到容器底部
-  pageScrollToBottom: function () {
-    wx.createSelectorQuery().select('#page_wrap').boundingClientRect(function (rect) {
-      // 使页面滚动到底部
-      wx.pageScrollTo({
-        scrollTop: rect.bottom
-      })
-    }).exec()
-  },
+  
   changeStar: function (level, callback) {
     let that = this;
     let newStarList = that.data.starList;
@@ -290,6 +281,7 @@ Page({
   onLoad: function (options) {
     console.log(options);
     loading.show();
+    autoAdpatStyle(this)
     let that = this;
     if (options && options.from && options.from == 'pay') {
       app.globalData.detailToIndex = true;

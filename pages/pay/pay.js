@@ -1,4 +1,4 @@
-import { loading, queryError } from '../../common/util';
+import { loading, queryError, autoAdpatStyle } from '../../common/util';
 import { mDriverPosition, mOrderPay, mPayWx, mCouponList, mPayNotify, mPostFormId } from '../../common/actions';
 let app = getApp();
 import drawQrcode from '../../common/weapp.qrcode';
@@ -15,7 +15,8 @@ Page({
     currentCity: '北京市',
     payType: '',//判断是否是取消单
     detailToIndex: app.globalData.detailToIndex,
-    showPay: false
+    showPay: false,
+    skin: ''
   },
   pollingCount: 1,
   timer: null,
@@ -29,9 +30,10 @@ Page({
     that.setData({
       ...app.globalData,
       currentCity: app.globalData.cityPriceAddress.region,
-      payType: options.orderType ? options.orderType:"",
+      payType: options.orderType ? options.orderType : "",
 
     });
+    autoAdpatStyle(this)
     delete app.globalData.couponId;
     // if (options && options.orderType) that.orderType = options.orderType;
   },
@@ -338,13 +340,11 @@ Page({
           width: app.globalData.windowWidth / 750 * 100,
           height: app.globalData.windowWidth / 750 * 100,
           canvasId: 'myQrcode',
-          text: decodeURIComponent(json.data)
+          text: decodeURIComponent(json.data),
         })
-        console.log(json)
       }
     });
   },
-  
   onHide: function () {
     clearTimeout(this.timer);
     clearTimeout(this.timer2);

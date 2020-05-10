@@ -1,27 +1,27 @@
-<view class="order-page">
-	<view class="left">
-		<view class="driver-info">
+<view class="page-container {{skin}}">
+	<view class="left-container">
+		<view class="inner-container">
 			<view class="driver-title">
 				<image mode="aspectFill" src="{{driver.pictureSmall}}" class="driver-head" />
 				<view class='content'>
-          <view class="driver-name">{{driver.name}} {{driver.driverId}}</view>
-          <view>驾龄 : {{driver.year}}年</view>
-        </view>
-        <image class="call-link"  bindtap="callPhone" mode="aspectFill" src="{{phoneIcon}}" />
-      </view>
-      <view class="notice">{{notice}}</view>
-      <view class="cancel" wx-if="{{modalHidden}}" bindtap="confirmCancel">取消订单</view>
+					<view class="driver-name text-black">{{driver.name}} {{driver.driverId}}</view>
+					<view class="text-gray">驾龄 : {{driver.year}}年</view>
+				</view>
+        		<image class="call-link"  bindtap="callPhone" mode="aspectFill" src="{{phoneIcon}}" />
+      		</view>
+      		<view class="notice text-black">{{notice}}</view>
+			<button class="btn-cancle btn gray" wx-if="{{modalHidden}}" bindtap="confirmCancel">取消订单</button>
 		</view>
 	</view>
-	<map
-	 id="map"
-	 scale="15"
-	 longitude="{{map.longitude ? map.longitude : 116.1544990540}}"
-	 latitude="{{map.latitude ? map.latitude : 39.8468989874}}"
-	 polyline="{{polyline}}"
-	 markers="{{markers}}"
-	 bindcallouttap="orderDetails"
-	>
-	</map>
+	<view class="right-container">
+		<map
+		id="map"
+		scale="15"
+		longitude="{{map.longitude ? map.longitude : 116.1544990540}}"
+		latitude="{{map.latitude ? map.latitude : 39.8468989874}}"
+		polyline="{{polyline}}"
+		markers="{{markers}}"
+		bindcallouttap="orderDetails"> </map>
+	</view>
 </view>
 

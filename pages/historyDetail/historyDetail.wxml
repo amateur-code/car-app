@@ -1,18 +1,19 @@
-<view class="costEstimate-box" wx:if="{{feeDetail}}">
-  <view class="totalFee-box">
-    {{totalFee}}
-    <text class="txt">元</text>
+<view class="{{skin}}">
+  <view class="costEstimate-box" wx:if="{{feeDetail}}">
+    <view class="totalFee-box">
+      {{totalFee}}
+      <text class="txt">元</text>
+    </view>
+    <view class="tip-box">
+      <view class="border border-left"></view>
+      <view class="txt">费用明细</view>
+      <view class="border border-right"></view>
+    </view>
+    <view class="detail-box">{{detailgebied}}</view>
+    <view class="detail-box {{!item.isReduce ? '' : 'isReduce'}}" wx:for="{{feeDetail}}" wx:key="item">
+      <view class="left">{{item.key}}</view>
+      <view class="line"></view>
+      <view>{{item.value}}</view>
+    </view>
   </view>
-  <view class="tip-box">
-    <view class="border border-left"></view>
-    <view class="txt">费用明细</view>
-    <view class="border border-right"></view>
-  </view>
-  <view class="detail-box">{{detailgebied}}</view>
-  <view class="detail-box {{!item.isReduce ? '' : 'isReduce'}}" wx:for="{{feeDetail}}" wx:key="item">
-    <view class="left">{{item.key}}</view>
-    <view class="line"></view>
-    <view>{{item.value}}</view>
-  </view>
-
 </view>

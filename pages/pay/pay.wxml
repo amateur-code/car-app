@@ -1,55 +1,41 @@
 
-<view class="pay-container" wx:if="{{order.show && !showcancelFee}}">
-	<view class="left">
-		<view class="header">
-			<view class="order-time">{{driver.time}}</view>
-			<text>{{driver.name}}</text>
-			<image bindtap="callPhone" src="../../res/phone_icon.png" />
-		</view>
-		<view class="address" bindtap="lookTrace">
-			<view class="address-detail">
-				<view class="ad start-ad">从
-					<text>{{order.start}}</text>
+<view class="page-container {{skin}}" wx:if="{{order.show && !showcancelFee}}">
+	<view class="left-container">
+		<view class="inner-container">
+			<view class="scroll-container">
+				<view class="header text-black">
+					<view class="order-time">{{driver.time}}</view>
+					<text>{{driver.name}}</text>
+					<image bindtap="callPhone" src="../../res/phone_icon.png" />
 				</view>
-				<view class="ad end-ad">到
-					<text>{{order.destination}}</text>
+				<view class="address" bindtap="lookTrace">
+					<view class="address-detail">
+						<view class="ad start-ad">从
+							<text class="text-black">{{order.start}}</text>
+						</view>
+						<view class="ad end-ad">到
+							<text class="text-black">{{order.destination}}</text>
+						</view>
+					</view>
+					<image class="right-icon" src="../../res/arrow_right.png" />
+				</view>
+				<view class="fee-detail text-black" wx:if='{{channel != "01012"}}' bindtap='getCoupon' data-channel='{{channel}}'>
+					<text class="fee-key">优惠券</text>
+					<view>
+						<text wx:if="{{order.couponFee*1 !=0}}" class="fee-value">-{{order.couponFee}}元</text>
+						<text wx:else class="fee-value">{{couponTxt}}</text>
+						<image wx:if='{{!limitCoupon}}' class="right-icon" src="../../res/arrow_right.png" />
+					</view>
 				</view>
 			</view>
-			<image class="right-icon" src="../../res/arrow_right.png" />
+			<button class="payCommit btn" bindtap="commitOrder" wx:if='{{order.cast * 1 != 0}}'>在线支付 {{order.cast}}元</button>
+			<button class="payCommit btn" bindtap="commitOrderNotify" wx:else>确认支付</button>
 		</view>
-		<view
-		 class="fee-detail"
-		 wx:if='{{channel != "01012"}}'
-		 bindtap='getCoupon'
-		 data-channel='{{channel}}'
-		>
-			<text class="fee-key">优惠券</text>
-			<view>
-				<text wx:if="{{order.couponFee*1 !=0}}" class="fee-value">-{{order.couponFee}}元</text>
-				<text wx:else class="fee-value">{{couponTxt}}</text>
-				<image wx:if='{{!limitCoupon}}' class="right-icon" src="../../res/arrow_right.png" />
-			</view>
-		</view>
-
-		<button
-		 class="payCommit"
-		 type="commitStyle2"
-		 bindtap="commitOrder"
-		 wx:if='{{order.cast * 1 != 0}}'
-		>在线支付 {{order.cast}}元
-		</button>
-		<button
-		 class="payCommit"
-		 type="commitStyle2"
-		 bindtap="commitOrderNotify"
-		 wx:else
-		>确认支付
-		</button>
 	</view>
 
-	<view class="content" wx:if="{{!detailToIndex}}">
+	<view class="right-container" wx:if="{{!detailToIndex}}">
 		<view
-		 class="fee-detail"
+		 class="fee-detail text-black"
 		 wx:for="{{order.collectionFee}}"
 		 wx:key="collectionFee"
 		 wx:for-item="fee"
@@ -58,7 +44,7 @@
 			<text class="fee-value">{{fee.value}}</text>
 		</view>
 		<view
-		 class="fee-detail"
+		 class="fee-detail text-black"
 		 wx:for="{{order.settleFee}}"
 		 wx:key="settleFee"
 		 wx:for-item="fee"
@@ -70,46 +56,44 @@
 </view>
 
 <!-- 取消费view -->
-<view class="pay-container" wx:if="{{order.show && showcancelFee}}">
-	<view class="left">
-		<view class="header">
-			<view class="order-time">{{driver.time}}</view>
-			<text>{{driver.name}}</text>
-			<image bindtap="callPhone" src="../../res/phone_icon.png" />
-		</view>
-		<view class="address" bindtap="lookTrace">
-			<view class="address-detail">
-				<view class="ad start-ad">从
-					<text>{{order.start}}</text>
+<view class="page-container {{skin}}" wx:if="{{order.show && showcancelFee}}">
+	<view class="left-container">
+		<view class="inner-container">
+			<view class="scroll-container">
+				<view class="header text-black">
+					<view class="order-time">{{driver.time}}</view>
+					<text>{{driver.name}}</text>
+					<image bindtap="callPhone" src="../../res/phone_icon.png" />
 				</view>
-				<view class="ad end-ad">到
-					<text>{{order.destination}}</text>
+				<view class="address" bindtap="lookTrace">
+					<view class="address-detail">
+						<view class="ad start-ad">从
+							<text class="text-black">{{order.start}}</text>
+						</view>
+						<view class="ad end-ad">到
+							<text class="text-black">{{order.destination}}</text>
+						</view>
+					</view>
+					<image class="right-icon" src="../../res/arrow_right.png" />
+				</view>
+				<view class='cancelReason text-black' wx:if="cancelDesc">
+					{{cancelDesc}}
 				</view>
 			</view>
-			<image class="right-icon" src="../../res/arrow_right.png" />
-		</view>
-		<view class='cancelReason' wx:if="cancelDesc">
-			{{cancelDesc}}
+			<button class="payCommit btn" bindtap="commitOrder" wx:if='{{order.cast * 1 != 0}}'>在线支付 {{order.cast}}元</button>
 		</view>
 		
-		<button
-		 class="payCommit"
-		 type="commitStyle2"
-		 bindtap="commitOrder"
-		 wx:if='{{order.cast * 1 != 0}}'
-		>在线支付 {{order.cast}}元
-		</button>
 	</view>
-	<view class="content cancle">
-		<view class="fee-detail flex-between">
+	<view class="right-container cancle">
+		<view class="fee-detail flex-between text-black">
 			<text class="fee-key">取消费</text>
 			<text class="fee-value">{{FeeDetail.cancel_fee}}元</text>
 		</view>
-		<view class="fee-detail flex-between">
+		<view class="fee-detail flex-between text-black">
 			<text class="fee-key">等候费</text>
 			<text class="fee-value">{{FeeDetail.wait_fee}}元</text>
 		</view>
-		<view class="fee-detail flex-between" wx:if="{{payDetail.account * 1 > 0}}">
+		<view class="fee-detail flex-between text-black" wx:if="{{payDetail.account * 1 > 0}}">
 			<text class="fee-key">余额抵扣</text>
 			<text class="fee-value">-{{payDetail.account}}元</text>
     </view>
@@ -119,11 +103,11 @@
 		</navigator>
 	</view>
 </view>
-<view class="qrcode-container-cover" wx:if="{{showPay}}">
+<view class="qrcode-container-cover {{skin}}" wx:if="{{showPay}}">
 	<view class="qrcode-container">
 		<canvas style="width: 100rpx; height: 100rpx;" canvas-id="myQrcode"></canvas>
 		<view class="canvas-right">
-			<view class="cast">代付款<text>¥{{order.cast}}</text></view>
+			<view class="cast text-blacl">代付款<text>¥{{order.cast}}</text></view>
 			<view>打开微信扫一扫支付</view>
 		</view>
 	</view>

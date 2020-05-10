@@ -1,6 +1,6 @@
 import { mCostEstimate } from '../../common/actions';
 import { GPS } from '../../common/GPS';
-import { loading, queryError } from '../../common/util';
+import { loading, queryError, autoAdpatStyle } from '../../common/util';
 var app = getApp();
 
 Page({
@@ -8,7 +8,8 @@ Page({
   data: {
     totalFee: '',
     feeDetail: [],
-    city: '北京'
+    city: '北京',
+    skin: ''
   },
   getCity: function(){
     this.setData({
@@ -16,6 +17,7 @@ Page({
     })
   },
   onLoad: function (options) {
+    autoAdpatStyle(this)
     loading.show();
     let that = this;
     that.getCity();

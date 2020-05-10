@@ -1,6 +1,14 @@
+.dark{
+  background-color: #303240;
+}
 .costEstimate-box{
+  padding: 30rpx 0;
   width: 500rpx;
   margin: 0 auto;
+  color: #333;
+}
+.dark .costEstimate-box{
+  color: #fff;
 }
 .totalFee-box{
   line-height: 40rpx;
@@ -17,7 +25,6 @@
 
 .tip-box {
   padding: 20rpx 0 10rpx;
-  color: #19191A;
   font-size: 14rpx;
   text-align: center;
 }
@@ -36,7 +43,6 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  color: #333;
 }
 .detail-box.isReduce, .detail-box.isReduce .left{
   color: #FF4B14;
@@ -54,4 +60,7 @@
   font-size: 14rpx;
   width: 100%;
   text-align: center;
+}
+.dark  .show-rule{
+  color: #fff;
 }

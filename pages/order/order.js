@@ -1,6 +1,6 @@
 
 import { GPS } from '../../common/GPS';
-import { loading, queryError } from '../../common/util';
+import { loading, queryError, autoAdpatStyle } from '../../common/util';
 import { mDriverTrace, mDriverPosition, mOrderCancel, mCancelFeeApi, mGpsLocation} from '../../common/actions';
 var app = getApp()
   , realtimeDistance
@@ -414,6 +414,7 @@ Page({
       app.globalData.bookingType = query.bookingType;
       app.globalData.bookingPhone = app.globalData.userInfo.phone;
     }
+    autoAdpatStyle(this)
   },
   //监听页面显示
   onShow: function () {

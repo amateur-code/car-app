@@ -1,6 +1,6 @@
-<view class="page-wrap" id="page_wrap" wx:if="{{order}}">
-	<view class="left">
-		<view class="cost_detail" wx:if="{{showFee}}">
+<view class="page-container {{skin}}" wx:if="{{order}}">
+	<view class="left-container">
+		<view class="cost_detail text-black" wx:if="{{showFee}}">
 			<view class="total_fee">
 				<text>{{order.income}}</text>
 				元
@@ -23,7 +23,7 @@
 			</view>
 		</view>
 
-		<view class="comment_wrap" wx:if="{{order && status != 2}}">
+		<view class="comment_wrap text-black" wx:if="{{order && status != 2}}">
 			<view class="title">{{title}}</view>
 			<view class="star_list" bindtap="clickStar">
 				<block wx:for="{{starList}}" wx:key="item">
@@ -33,20 +33,20 @@
 		</view>
 
 	</view>
-	<view class="right" wx:if="{{!showComment}}">
+	<view class="right-container" wx:if="{{!showComment}}">
 		<view class="order_detail">
 			<view class="driver_info ">
 				<image class="drv_img" src="{{order.driverImg}}" />
 				<view>
-					<text class="drv_name">{{order.driverName?order.driverName:''}} {{ order.driverId}}</text>
-					<text class="order_year">{{order.driverYear}}年驾龄</text>
+					<text class="drv_name text-black">{{order.driverName}} {{ order.driverId}}</text>
+					<text class="order_year" wx:if="{{order.driverYear}}">{{order.driverYear}}年驾龄</text>
 				</view>
 			</view>
-			<view class="order_time">
+			<view class="order_time text-black">
 				<image src="../../res/icon-time.png" />
 				{{order.time}}
 			</view>
-			<view class="address flex-between" bindtap="lookTrace">
+			<view class="address flex-between text-black" bindtap="lookTrace">
 				<view class="start">
 					<image src="../../res/icon_start.png" />
 					<text>{{order.locationStart}}</text>
@@ -59,7 +59,7 @@
 
 		</view>
 	</view>
-	<view class="right" wx:if="{{showComment}}">
+	<view class="right-container" wx:if="{{showComment}}">
 		<view class="other_comment">
 			<view class="tag_wrap" bindtap="chooseTag">
 				<block wx:for="{{remarks}}" wx:key="item">
@@ -81,7 +81,7 @@
 				 placeholder-style="color: #cccccc; font-size: 14rpx;"
 				/>
 				</view>
-      <button class="btn-submit" type="canCommit"  bindtap="commitComment">提交</button>
+      <button class="btn btn-submit" type="canCommit"  bindtap="commitComment">提交</button>
     </view>
   </view>
 

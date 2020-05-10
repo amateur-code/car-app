@@ -1,12 +1,13 @@
 import { mOrderTrace } from '../../common/actions';
-import { loading, queryError} from '../../common/util';
+import { loading, queryError, autoAdpatStyle} from '../../common/util';
 let app = getApp();
 Page({
   data: {
     ruleTop: app.globalData.windowHeight - app.globalData.windowWidth / 750 - 60,
     feeDetail: [],
     totalFee: '',
-    region: '北京'
+    region: '北京',
+    skin: ''
   },
   // 获取城市列表
   getCity: function(){
@@ -17,6 +18,7 @@ Page({
   },
   onLoad: function (options) {
     // console.log(app.globalData.nowLoc)
+    autoAdpatStyle(this);
     loading.show();
     let that = this;
     that.getCity();

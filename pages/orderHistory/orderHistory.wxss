@@ -1,17 +1,27 @@
 .list_container{
   padding: 20rpx 0;
   display: flex;
+  min-height: 100vh;
   flex-wrap: wrap;
   width: 100%;
   background: #fcfdff;
+}
+.list_container.dark {
+  background-color: #121212;
 }
 
 .list_item{
   margin: 20rpx 8rpx;
   width: 234rpx;
+  color: #646566;
   box-shadow: 0 0 14px 0 rgba(0,0,0,0.20);
   background-color: #ffffff;
 }
+.list_container.dark .list_item{
+  color: #969799;
+  background: rgba(255,255,255,0.08);
+}
+
 .status_btn{
   display: flex;
   align-items: center;
@@ -21,6 +31,9 @@
   color: #7D7E80;
   line-height: 44.85rpx;
   border-bottom: 1px solid #E8E9EB;
+}
+.list_container.dark .status_btn{
+  border-bottom: 1px solid rgba(232,233,235,0.10);
 }
 .status_btn image{
   display: inline-block;
@@ -37,11 +50,13 @@
   font-size: 15.6rpx;
   color: #19191A;
 }
+.list_container.dark .title{
+  color: #ffffff;
+}
 
 .list_item_time{
   margin-top: 16rpx;
   font-size: 14rpx;
-  color: #646566;
 }
 .list_item_address_start{
   margin-top: 16rpx;
@@ -53,7 +68,7 @@
   text-overflow: ellipsis;
   font-size: 14rpx;
   line-height: 15rpx;
-  color: #646566;
+ 
 }
 .list_item .list_item_address_start image, 
 .list_item .list_item_address_end image{

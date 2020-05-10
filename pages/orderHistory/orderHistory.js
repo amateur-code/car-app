@@ -1,6 +1,6 @@
 // pages/orderHistory/orderHistory.js
 let app = getApp();
-import { loading, queryError } from '../../common/util';
+import { loading, queryError, autoAdpatStyle } from '../../common/util';
 import { mGetOrderHistory } from '../../common/actions';
 
 Page({
@@ -10,12 +10,15 @@ Page({
     currentPage: 0,
     orderNo: 0,
     hasMoreOrder: false,
-    showEmpty: false
+    showEmpty: false,
+    skin: ''
   },
   onLoad: function (options) {
+    autoAdpatStyle(this)
     this.getOrderHistory()
   },
   goDetail(e){
+    console.log('orderId=' + e.currentTarget.dataset.orderid + '&fromHistory=true&status=' + e.currentTarget.dataset.status)
     wx.navigateTo({ 
       url: '../orderDetail/orderDetail?orderId=' + e.currentTarget.dataset.orderid + '&fromHistory=true&status=' + e.currentTarget.dataset.status 
     });

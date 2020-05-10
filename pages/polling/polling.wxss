@@ -1,28 +1,11 @@
-.poll-page{
-  display: flex;
-}
-
-.left{
-  padding: 0 20rpx;
-  margin: 9.75rpx;
-  width: 280rpx;
-  background: rgba(255,255,255,0.95);
-  box-shadow: 0 0 4px 0 rgba(0,0,0,0.15), 0 14px 32px 2px rgba(0,0,0,0.15);
-  border-radius: 5rpx;
-}
-.info_container{
-  position: relative;
-  height: 100%;
-  padding-bottom: 62rpx;
-}
 .info1{
   position: relative;
   padding: 20rpx 0 10rpx 36rpx;
   line-height: 15rpx;
   font-size: 13rpx;
-  color: #19191A;
   border-bottom: 1rpx solid #E8E9EB;
 }
+
 .info1_icon{
   position: absolute;
   top: 20rpx;
@@ -37,35 +20,11 @@
 .info2_title{
   font-size: 12rpx;
 }
+
 .info2_content{
   margin-top: 5rpx;
-  font-size: 9rpx;
+  font-size: 10rpx;
   color: #8C929C;
-}
-
-.btn_container{
-  position: absolute;
-  width: 100%;
-  height: 35rpx;
-  border-radius: 4rpx;
-  bottom: 12rpx;
-  font-size: 12rpx;
-  line-height: 35rpx;
-  color: #3B414D;
-  background: #ffffff;
-  text-align: center;
-  border: 1rpx solid #3B414D;
-}
-
-
-.map-container{
-  position: relative;
-  flex: 1;
-  height: 100vh;
-}
-map{
-  width: 100%;
-  height: 100%;
 }
 
 .map-holder{
@@ -76,32 +35,11 @@ map{
   height: 100%;
   z-index: 9999;
 }
+
 .callout2{
-  position: absolute;
-  color:#44A7EF;
-  top: 50%;
-  left: 50%;
-  font-size: 11rpx;
-  transform: translate(-50%,-60rpx);
+  transform: translate(-50%,-70rpx);
 }
 .callout2 .callout2-image{
-  width: 210rpx;
-  height: 48rpx;
-}
-.callout2-item-container{
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.callout-item1 {
-  text-align: left;
-  padding-right: 2px;
-  color: #44a7ef;
-  display: inline-block;
-}
-.callout-item2 {
-  color: #000000;
-  display: inline-block;
-  text-align: left;
+  width: 177rpx;
+  height: 60rpx;
 }

@@ -1,22 +1,23 @@
-<view class="poll-page">
-	<view class="left" wx:if="{{ (showPollingConfigTip || showPollingConfigTitle) && showCancel }}">
-		<view class="info_container">
+<view class="page-container {{skin}}">
+	<view class="left-container">
+		<view class="inner-container" wx:if="{{ (showPollingConfigTip || showPollingConfigTitle) && showCancel }}">
 			<view class="info1" wx:if="{{showPollingConfigTitle}}">
-				<image class="info1_icon" src="../../res/icon_tip.png" />
-				<text>{{ titleItem }}</text>
+        <image class="info1_icon" wx:if="{{skin == 'dark'}}" src="../../res/icon_tip_dark.png" />
+				<image class="info1_icon" wx:else src="../../res/icon_tip.png" />
+				<text class="text-black">{{ titleItem }}</text>
 			</view>
 			<view class="info2" wx:if="{{showPollingConfigTip}}">
-				<view class="info2_title">
+				<view class="info2_title text-black">
 					{{ tip.title }}
 				</view>
 				<view class="info2_content">
 					{{ tipItem }}
 				</view>
-			</view>
-			<view class="btn_container" bindtap="confirmCancel">取消订单</view>
+      </view>
+      <button class="btn-cancle btn gray" bindtap="confirmCancel">取消订单</button>
 		</view>
   </view>
-  <view class="map-container">
+  <view class="right-container">
     <map
       id="map"
       scale="{{map.scale}}"
@@ -29,7 +30,7 @@
       <cover-view class="map-holder" />
       <cover-view class="callout2" wx:if="{{showCancel}}" >
         <cover-image class="callout2-image" src="../../res/location_bubble_bg.png" />
-        <cover-view class="callout2-item-container" scroll-top="0">
+        <cover-view class="callout2-item-container">
           <cover-view class="callout-item1" wx:if="{{calloutTxt }}">{{calloutTxt}} </cover-view>
           <cover-view class="callout-item2" style=""> {{ calloutTxt2 }}</cover-view>
         </cover-view>

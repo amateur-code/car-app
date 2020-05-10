@@ -1,4 +1,4 @@
-<view>
+<view class="{{skin}}">
   <view class="header" wx:if="{{!isList}}">本次服务最多可使用一张代驾券</view>
   <view class="listNull" wx:else >暂无可用优惠券</view>
   <view class="list">

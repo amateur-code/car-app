@@ -1,22 +1,19 @@
-.person-center{
-  display: flex;
+.page-container.dark .right-container{
+  background-color: #000;
 }
-
-
-
-.person_list{
+.left-container{
+  padding: 0 20rpx;
   width: 300rpx;
-  min-height: 100vh;
-  padding: 0 19rpx;
-  box-shadow: -7px 0 30px 0 rgba(152,152,152,0.42);
 }
-.person_list .item{
+.item{
   display: flex;
   height: 42rpx;
   line-height: 42rpx;
   font-size: 14rpx;
-  color: #19191A;
   border-bottom: 1px solid #E8E9EB;
+}
+.page-container.dark .item{
+  border-bottom: 1px solid rgba(232,233,235,0.10);
 }
 .txt{
   flex:1;
@@ -50,18 +47,12 @@
 }
 .wechat_info .phone{
   font-size: 15rpx;
-  color: #19191A;
   margin-top: 12rpx;
 }
 
 .exit_btn{
+  position: relative;
+  bottom: 0;
   width: 222rpx;
-  height: 45rpx;
-  font-size: 15rpx;
-  text-align: center;
-  line-height: 45rpx;
   margin: 40rpx auto 0;
-  background-color: #E0E2E6;
-  color: #19191A;
-  border-radius: 5rpx;
 }

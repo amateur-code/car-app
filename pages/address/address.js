@@ -6,7 +6,8 @@ import {
 } from "../../common/actions";
 import {
   loading,
-  queryError
+  queryError,
+  autoAdpatStyle
 } from "../../common/util";
 import {
   GPS
@@ -19,7 +20,8 @@ Page({
     enterTxt: "请输入出发地",
     cityListStatus: false,
     value: '',
-    textareaPadding: false
+    textareaPadding: false,
+    skin: ''
   },
   locTip: "",
   enterTxt: '',
@@ -197,6 +199,7 @@ Page({
   onLoad(option) {
     this.enterTxt = '';
     this.locTip = option.locTip;
+    autoAdpatStyle(this)
     if (option.locTip === "end") {
       this.enterTxt = "请输入目的地";
       this.currentPosHide = false;

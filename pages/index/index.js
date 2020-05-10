@@ -4,7 +4,7 @@
 import { GPS } from "../../common/GPS";
 import configInfo from "../../common/config";
 import dataTreating from "../../common/base64";
-import { loading, queryError, eStorage } from "../../common/util";
+import { loading, queryError, eStorage, autoAdpatStyle } from "../../common/util";
 import {
   mGetEndbypois,
   mGetWelcome,
@@ -42,11 +42,9 @@ Page({
       longitude: 0
     },
     map: {
-      height: 0,
       scale: 15,
       latitude: 0,
       longitude: 0,
-      includePoints: [],
       circles: [
         {
           latitude: "",
@@ -57,7 +55,6 @@ Page({
           strokeWidth: 0
         }
       ],
-      controls: [],
       markers: []
     },
     homeAd: {},
@@ -73,6 +70,7 @@ Page({
     isClickFemale: false,
     showDynamic: false,
     showMainBtn: false, //强输目的地控制
+    skin:'',
   },
   gender: "1",
   isVerified: "0", // 0 未认证 1 已认证
@@ -99,13 +97,7 @@ Page({
   regionchangeTimer: null,
   source: 5,
   cityId: "",
-  // 设置地图view
-  setMapConfig: function(d) {
-  },
-  // 修改地图高度
-  changeMapHeight() {
-    this.setMapConfig(this.mapHeightController());
-  },
+  
   // 关闭推荐目的地
   closeAddressRecommend() {
     this.setData({
@@ -912,6 +904,7 @@ Page({
   onLoad: function(query = {}) {
     loading.show();
     let that = this;
+    autoAdpatStyle(that)
     this.onloadStart = true;
     // console.log("onload", query);
     if (query && query.action) {
@@ -947,7 +940,6 @@ Page({
       delete app.globalData.storeEndAddress;
     }
     that.refreshLoction();
-    that.setMapConfig(that.addressHeight1); //520
 
     // query.q = 'http://h5.d.edaijia.cn/weixin/index.html?shopId=8471';
     // query.q = 'http://h5.edaijia.cn/twocode/index.html?BJ97338=';
@@ -1274,7 +1266,6 @@ Page({
             showMainBtn: !showMainBtn,//"input_destination": 强输目的地配置 true开启，false关闭
           });
           // that.getRecommendAddress();
-          that.changeMapHeight();
         }
       });
     })
@@ -1374,7 +1365,6 @@ Page({
       isClickFemale: true
     });
     app.globalData.isClickFemale = true;
-    this.setMapConfig(this.mapHeightController());
     if (that.isVerified == "0") {
       that.setData({
         showFemale: true
@@ -1390,7 +1380,6 @@ Page({
       showFemale: false
     });
     app.globalData.isClickFemale = false;
-    this.setMapConfig(this.mapHeightController());
   },
   // 点击实名认证按钮
   verifyFemale: function() {
@@ -1507,7 +1496,6 @@ Page({
         showDynamic: false
       });
     }
-    this.setMapConfig(this.mapHeightController());
     loading.hide();
     this.setData({
       dynamicInfo: data,

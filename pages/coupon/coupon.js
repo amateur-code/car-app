@@ -1,4 +1,4 @@
-import { loading, queryError } from '../../common/util';
+import { loading, queryError,autoAdpatStyle } from '../../common/util';
 import { mCouponList } from '../../common/actions';
 var app = getApp();
 
@@ -9,9 +9,11 @@ Page({
    */
   data: {
     dataList: {},
-    isList: false
+    isList: false,
+    skin: ''
   },
   onLoad: function (options) {
+    autoAdpatStyle(this)
     this.userBonus = options.userBonus;
     this.couponBind = JSON.parse(decodeURIComponent(decodeURIComponent(options.couponBind)));
     this.couponBinded = JSON.parse(decodeURIComponent(decodeURIComponent(options.couponBinded)));
