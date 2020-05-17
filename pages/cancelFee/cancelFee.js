@@ -14,7 +14,7 @@ Page({
      * udid  用户标志
      */
     this.setData({
-      url: config.h5Url + 'responsibility-cancel-order/index.html?orderId=' + app.globalData.order.orderId + '&token=' + app.globalData.userInfo.token + '&from=' + config.from + '&udid=' + app.globalData.userInfo.openId + '&bookingId=' + app.globalData.bookingId + '&city=' + encodeURI(app.globalData.cityPriceAddress.region) + '&skin=' + app.globalData.skin + '#wechat_redirect'
+      url: config.h5Url + 'responsibility-cancel-order/index.html?orderId=' + app.globalData.order.orderId + '&token=' + app.globalData.userInfo.token + '&from=' + config.from + '&udid=' + app.globalData.userInfo.openId + '&bookingId=' + app.globalData.bookingId + '&city=' + encodeURI(app.globalData.cityPriceAddress.region) + '&orderFrom=mini&skin=' + app.globalData.skin + '#wechat_redirect'
     })
   },
   onShareAppMessage: app.shareConfig
